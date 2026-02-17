@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShabbaTTogether Inclusion Resources | Friendship Circle International</title>
+    <meta name="description" content="Free inclusion resources for Jewish communities. Sermons, guides, activities, and tools to make your shul, school, and home more welcoming for everyone.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #1b365d;
+            --teal: #36bbae;
+            --teal-light: #e8f8f6;
+            --cream: #f8f5f1;
+            --warm-gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --border: #e5e7eb;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a1a;
+            background: #fff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero */
+        .hero {
+            background: var(--navy);
+            color: white;
+            padding: 80px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 140%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(54,187,174,0.15) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 30%, rgba(54,187,174,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero-inner {
+            max-width: 760px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-org {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+        .hero-org-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--teal);
+            border-radius: 50%;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(54,187,174,0.2);
+            color: var(--teal);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        .hero h1 span {
+            color: var(--teal);
+        }
+        .hero-subtitle {
+            font-size: 20px;
+            color: rgba(255,255,255,0.9);
+            max-width: 600px;
+            margin: 0 auto 16px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+        .hero p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.65);
+            max-width: 540px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: var(--teal);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-bottom: 40px;
+        }
+        .hero-cta:hover {
+            background: #2fa99d;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(54,187,174,0.4);
+        }
+        .hero-cta svg {
+            width: 18px;
+            height: 18px;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero-stat {
+            text-align: center;
+        }
+        .hero-stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--teal);
+        }
+        .hero-stat-label {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 2px;
+        }
+        .bh {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            z-index: 2;
+        }
+
+        /* What Is Section */
+        .what-is {
+            background: var(--cream);
+            padding: 64px 24px;
+        }
+        .what-is-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .what-is-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .what-is-header h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+        .what-is-header p {
+            font-size: 16px;
+            color: var(--warm-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .pillar {
+            background: white;
+            border-radius: var(--radius);
+            padding: 28px;
+            border: 1px solid var(--border);
+        }
+        .pillar-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+        .pillar-icon-teal { background: var(--teal-light); }
+        .pillar-icon-navy { background: #e8ecf3; }
+        .pillar-icon-warm { background: #fef3c7; }
+        .pillar h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        .pillar p {
+            font-size: 14px;
+            color: var(--warm-gray);
+            line-height: 1.65;
+        }
+
+        /* Who For Section */
+        .who-for {
+            padding: 64px 24px;
+            background: white;
+        }
+        .who-for-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .who-for h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+        .who-for > p, .who-for-inner > p {
+            font-size: 16px;
+            color: var(--warm-gray);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            text-align: left;
+        }
+        .audience-card {
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+            cursor: default;
+        }
+        .audience-card:hover {
+            border-color: var(--teal);
+            box-shadow: var(--shadow-sm);
+        }
+        .audience-emoji {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .audience-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+        .audience-card p {
+            font-size: 13px;
+            color: var(--warm-gray);
+            line-height: 1.5;
+        }
+
+        /* Divider */
+        .section-divider {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .section-divider hr {
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Browse header */
+        .browse-header {
+            text-align: center;
+            padding: 48px 24px 0;
+        }
+        .browse-header h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        .browse-header p {
+            font-size: 16px;
+            color: var(--warm-gray);
+        }
+
+        @media (max-width: 640px) {
+            .hero { padding: 60px 20px 48px; }
+            .hero-stats { gap: 24px; }
+            .hero-stat-number { font-size: 26px; }
+            .what-is { padding: 48px 20px; }
+            .who-for { padding: 48px 20px; }
+            .audience-grid { grid-template-columns: 1fr 1fr; }
+            .browse-header { padding: 36px 20px 0; }
+        }
+
+        /* Filter Bar */
+        .filter-section {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .filter-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .filter-inner::-webkit-scrollbar { display: none; }
+        .filter-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: white;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--warm-gray);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover {
+            border-color: var(--navy);
+            color: var(--navy);
+        }
+        .filter-btn.active {
+            background: var(--navy);
+            border-color: var(--navy);
+            color: white;
+        }
+        .filter-btn .count {
+            background: var(--light-gray);
+            color: var(--warm-gray);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 1px 7px;
+            border-radius: 10px;
+        }
+        .filter-btn.active .count {
+            background: rgba(255,255,255,0.2);
+            color: white;
+        }
+
+        /* Content */
+        .content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+        .section-header {
+            margin-bottom: 24px;
+        }
+        .result-count {
+            font-size: 14px;
+            color: #9ca3af;
+        }
+
+        /* Resource Grid */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        /* Resource Card */
+        .resource-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeUp 0.4s ease forwards;
+        }
+        .resource-card:hover {
+            border-color: #d1d5db;
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .card-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .card-tag {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+        .tag-shluchim { background: #ede9fe; color: #6d28d9; }
+        .tag-campus { background: #dbeafe; color: #1d4ed8; }
+        .tag-teens { background: #fce7f3; color: #be185d; }
+        .tag-women { background: #fef3c7; color: #b45309; }
+        .tag-children { background: #d1fae5; color: #047857; }
+        .tag-adults { background: #fee2e2; color: #b91c1c; }
+        .tag-athome { background: var(--teal-light); color: #0f766e; }
+        .tag-sermon { background: #f3e8ff; color: #7c3aed; }
+        .tag-mental-health { background: #e0f2fe; color: #0369a1; }
+        .tag-inclusion { background: #ecfdf5; color: #059669; }
+        .tag-holiday { background: #fff7ed; color: #c2410c; }
+        .tag-practical { background: #f1f5f9; color: #475569; }
+
+        .card-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.35;
+            margin-bottom: 8px;
+        }
+        .card-description {
+            font-size: 14px;
+            color: var(--warm-gray);
+            line-height: 1.6;
+            flex: 1;
+            margin-bottom: 16px;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 18px;
+            background: var(--navy);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .download-btn:hover {
+            background: #142a4d;
+            transform: scale(1.02);
+        }
+        .download-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+        .price-tag {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--teal);
+        }
+
+        /* Featured card */
+        .resource-card.featured {
+            border: 2px solid var(--teal);
+            background: linear-gradient(135deg, #f0fdfa 0%, #fff 40%);
+        }
+        .featured-badge {
+            position: absolute;
+            top: -1px;
+            right: 20px;
+            background: var(--teal);
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 10px 6px;
+            border-radius: 0 0 6px 6px;
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            display: none;
+        }
+        .empty-state.visible { display: block; }
+        .empty-state h3 {
+            font-size: 18px;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        .empty-state p {
+            color: var(--warm-gray);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 40px 24px;
+        }
+        .footer-logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+        .footer p {
+            font-size: 14px;
+            max-width: 480px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: var(--teal);
+            text-decoration: none;
+        }
+        .footer a:hover { text-decoration: underline; }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .hero { padding: 56px 20px 44px; }
+            .hero-org { font-size: 11px; flex-wrap: wrap; justify-content: center; }
+            .hero-stats { gap: 20px; flex-wrap: wrap; }
+            .hero-stat-number { font-size: 24px; }
+            .resource-grid { grid-template-columns: 1fr; }
+            .content { padding: 24px 16px 60px; }
+            .filter-section { padding: 12px 16px; }
+            .what-is { padding: 48px 20px; }
+            .who-for { padding: 48px 20px; }
+            .audience-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .browse-header { padding: 36px 20px 0; }
+            .pillars { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bh">B"H</div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-org">
+                Friendship Circle International
+                <span class="hero-org-dot"></span>
+                Chabad Inclusion Initiative
+            </div>
+            <div class="hero-badge">February is Jewish Disability &amp; Inclusion Awareness Month</div>
+            <h1>Make Your Community<br>More <span>Inclusive</span></h1>
+            <p class="hero-subtitle">Free, ready-to-use resources to help every shul, school, campus, and home welcome people of all abilities.</p>
+            <p>ShabbaTTogether was created by the Ruderman Chabad Inclusion Initiative, now led by Friendship Circle International. These guides, sermons, activities, and tools have helped hundreds of communities take practical steps toward inclusion.</p>
+            <a href="#resources" class="hero-cta">
+                Browse All Resources
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" /></svg>
+            </a>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">40+</div>
+                    <div class="hero-stat-label">Free Resources</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">7</div>
+                    <div class="hero-stat-label">Audience Categories</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">100%</div>
+                    <div class="hero-stat-label">Free to Download</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Is This -->
+    <section class="what-is">
+        <div class="what-is-inner">
+            <div class="what-is-header">
+                <h2>What You'll Find Here</h2>
+                <p>Everything you need to bring inclusion into your community, organized by audience and ready to use this Shabbat.</p>
+            </div>
+            <div class="pillars">
+                <div class="pillar">
+                    <div class="pillar-icon pillar-icon-navy">&#x1f4d6;</div>
+                    <h3>Sermons &amp; Divrei Torah</h3>
+                    <p>Ready-to-deliver sermons connecting Torah wisdom to disability inclusion, mental health awareness, and the value of every person. Perfect for Shabbat, Purim, and year-round.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon pillar-icon-teal">&#x1f9e0;</div>
+                    <h3>Mental Health Guides</h3>
+                    <p>Playbooks for Shluchim, campus leaders, and families on supporting mental health. Includes crisis guidance, resource handouts, and the Shalom Zone quiet space program.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon pillar-icon-warm">&#x1f3b2;</div>
+                    <h3>Programs &amp; Activities</h3>
+                    <p>Inclusive challah bakes, Havdalah programs, Tu B'Shvat celebrations, mental health games, and more. Designed so every participant feels they belong.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Is This For -->
+    <section class="who-for">
+        <div class="who-for-inner">
+            <h2>Who Are These Resources For?</h2>
+            <p>Whether you lead a community, run a campus Chabad, teach children, or just want your home to be more welcoming, there's something here for you.</p>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-emoji">&#x1f54d;</div>
+                    <h4>Shluchim &amp; Rabbis</h4>
+                    <p>Sermons, inclusion handouts, sensory guides, and practical steps for your shul</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-emoji">&#x1f3e0;</div>
+                    <h4>Families</h4>
+                    <p>The complete @Home guide with Shabbat activities for every family member</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-emoji">&#x1f393;</div>
+                    <h4>Campus Leaders</h4>
+                    <p>Mental health playbooks, activities, and Shalom Zone guides for students</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-emoji">&#x1f9d2;</div>
+                    <h4>Youth Educators</h4>
+                    <p>Age-appropriate programs, games, and inclusive environments for kids and teens</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-emoji">&#x1f46d;</div>
+                    <h4>Women's Groups</h4>
+                    <p>The Masks We Wear program and inclusive challah bakes</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-emoji">&#x1f91d;</div>
+                    <h4>Community Members</h4>
+                    <p>Havdalah programs, medical crisis support, and inclusion journals</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Browse Resources Header -->
+    <section class="browse-header" id="resources">
+        <h2>Browse &amp; Download Resources</h2>
+        <p>Click any category to filter, or scroll through everything.</p>
+    </section>
+
+    <!-- Filters -->
+    <section class="filter-section">
+        <div class="filter-inner" id="filters">
+            <button class="filter-btn active" data-filter="all">All Resources <span class="count" id="count-all"></span></button>
+            <button class="filter-btn" data-filter="shluchim">Shluchim &amp; Rabbis <span class="count" id="count-shluchim"></span></button>
+            <button class="filter-btn" data-filter="athome">@Home / Family <span class="count" id="count-athome"></span></button>
+            <button class="filter-btn" data-filter="teens">Teens <span class="count" id="count-teens"></span></button>
+            <button class="filter-btn" data-filter="campus">Campus <span class="count" id="count-campus"></span></button>
+            <button class="filter-btn" data-filter="children">Children <span class="count" id="count-children"></span></button>
+            <button class="filter-btn" data-filter="women">Women <span class="count" id="count-women"></span></button>
+            <button class="filter-btn" data-filter="adults">Adults <span class="count" id="count-adults"></span></button>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <main class="content">
+        <div class="section-header">
+            <div class="result-count" id="result-count"></div>
+        </div>
+        <div class="resource-grid" id="resource-grid"></div>
+        <div class="empty-state" id="empty-state">
+            <h3>No resources found</h3>
+            <p>Try selecting a different category above.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">Friendship Circle International</div>
+        <p>ShabbaTTogether is an initiative of <a href="https://www.friendshipcircle.com" target="_blank" rel="noopener">Friendship Circle International</a>, empowering Jewish communities to become more inclusive and welcoming for individuals with disabilities.</p>
+    </footer>
+
+    <script>
+    // All resource data is hardcoded - no user input, safe for DOM construction
+    const resources = [
+        {
+            title: "ShabbaTTogether@Home Complete Guide",
+            description: "The complete guide for bringing inclusion and mental wellness into your home. Resources for before, during, and after Shabbat, with activities for every family member.",
+            file: "resources/shabbattogether-at-home-guide.pdf",
+            categories: ["athome"],
+            tags: [{ label: "@Home", cls: "tag-athome" }, { label: "Guide", cls: "tag-practical" }],
+            featured: true
+        },
+        {
+            title: "Inclusion Sermon 2023",
+            description: "A ready-to-deliver sermon on inclusion and belonging in the Jewish community. Developed in partnership with JLI.",
+            file: "resources/sermon-inclusion-2023.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Sermon", cls: "tag-sermon" }]
+        },
+        {
+            title: "Inclusion Sermon 2021",
+            description: "JLI sermon exploring the Torah perspective on inclusion, disability awareness, and our communal responsibility.",
+            file: "resources/sermon-inclusion-2021.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Sermon", cls: "tag-sermon" }]
+        },
+        {
+            title: "Dvar Torah: Adar, Purim & Inclusion",
+            description: "A Dvar Torah and class connecting the themes of Adar and Purim to inclusion and welcoming every member of the community.",
+            file: "resources/dvar-torah-adar-purim-inclusion.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Sermon", cls: "tag-sermon" }, { label: "Holiday", cls: "tag-holiday" }]
+        },
+        {
+            title: "Mental Health Guide for Community Shluchim",
+            description: "A comprehensive playbook for community Shluchim on supporting mental health, recognizing warning signs, and connecting people with resources.",
+            file: "resources/mental-health-guide-community.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "The Rebbe's Letters on Inclusion",
+            description: "A curated collection of the Lubavitcher Rebbe's letters addressing inclusion, the potential in every person, and our responsibility to one another.",
+            file: "resources/rebbes-letters-inclusion.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "The Power of Community: Letter of the Rebbe",
+            description: "The Rebbe's powerful message on the strength that comes from communal unity, especially during Hakhel gatherings.",
+            file: "resources/power-of-community-rebbe.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "Food Sensitivities & Printable Labels",
+            description: "Guide to accommodating food sensitivities at community events, with ready-to-print labels for common allergens.",
+            file: "resources/food-sensitivities-labels.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Practical", cls: "tag-practical" }]
+        },
+        {
+            title: "6 Practical Steps to Be More Inclusive",
+            description: "Actionable steps any shul or community can implement right away to create a more inclusive and welcoming environment.",
+            file: "resources/six-steps-inclusive.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "Tips for Communicating With People with Disabilities",
+            description: "Language guidelines and communication tips for respectfully interacting with and about people with disabilities.",
+            file: "resources/tips-communicating-disabilities.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "Identifying Language Guide",
+            description: "A reference guide on person-first language and how the words we use shape attitudes toward people with disabilities.",
+            file: "resources/identifying-language.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "How to Create a Sensory Box",
+            description: "Step-by-step instructions for building a sensory box to help individuals with sensory needs feel comfortable in your space.",
+            file: "resources/how-to-create-sensory-box.pdf",
+            categories: ["shluchim", "children"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Practical", cls: "tag-practical" }]
+        },
+        {
+            title: "4 Tips to Create a Quiet Space",
+            description: "Practical tips for setting up a calming quiet space at your shul or community center for those who need a sensory break.",
+            file: "resources/tips-create-quiet-space.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Practical", cls: "tag-practical" }]
+        },
+        {
+            title: "Inclusive Purim Guide",
+            description: "A comprehensive guide from FCI on making your Purim celebrations inclusive and accessible for community members of all abilities.",
+            file: "resources/inclusive-purim-guide.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Holiday", cls: "tag-holiday" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "Hakhel ShabbaTTogether Message",
+            description: "A special Hakhel message connecting the themes of communal gathering and inclusion for use during the Hakhel year.",
+            file: "resources/hakhel-message.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }]
+        },
+        {
+            title: "Hakhel Message for Print",
+            description: "Print-ready version of the Hakhel ShabbaTTogether message, perfect for distribution in your shul or community center.",
+            file: "resources/hakhel-message-print.pdf",
+            categories: ["shluchim"],
+            tags: [{ label: "Shluchim", cls: "tag-shluchim" }, { label: "Practical", cls: "tag-practical" }]
+        },
+        {
+            title: "Mental Health Resources Handout",
+            description: "A one-page handout listing mental health resources, hotlines, and support organizations. Editable for your community.",
+            file: "resources/mental-health-resources-handout.pdf",
+            categories: ["shluchim", "campus"],
+            tags: [{ label: "Mental Health", cls: "tag-mental-health" }, { label: "Practical", cls: "tag-practical" }]
+        },
+        {
+            title: "@Home Inclusive Challah Bake",
+            description: "A meaningful challah bake activity you can do at home, highlighting how we all belong. Create special challahs and give one to a friend.",
+            file: "resources/at-home-challah-bake.pdf",
+            categories: ["athome", "women"],
+            tags: [{ label: "@Home", cls: "tag-athome" }, { label: "Activity", cls: "tag-practical" }]
+        },
+        {
+            title: "Shalom Zone Guide (All Ages)",
+            description: "Create a quiet, calming space in your home for children, teens, and young adults to self-regulate and manage strong emotions.",
+            file: "resources/shalom-zone-all-ages.pdf",
+            categories: ["athome"],
+            tags: [{ label: "@Home", cls: "tag-athome" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "@Home Guidance for Families in Medical Crisis",
+            description: "Practical advice on supporting friends and family in medical crisis, and how to take care of yourself while doing so.",
+            file: "resources/at-home-medical-crisis.pdf",
+            categories: ["athome", "adults"],
+            tags: [{ label: "@Home", cls: "tag-athome" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "@Home Sermon",
+            description: "A personal sermon you can share at your family Shabbat table, weaving inclusion and the weekly Torah portion together.",
+            file: "resources/at-home-sermon.pdf",
+            categories: ["athome"],
+            tags: [{ label: "@Home", cls: "tag-athome" }, { label: "Sermon", cls: "tag-sermon" }]
+        },
+        {
+            title: "Family Mental Health Games",
+            description: "Fun activities of introspection and communication using candies, cards, and games. Discover similarities and learn to be supportive.",
+            file: "resources/family-mental-health-games.pdf",
+            categories: ["athome"],
+            tags: [{ label: "@Home", cls: "tag-athome" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "Inclusion Journal",
+            description: "An interactive journal for reflecting on inclusion themes, personal growth, and building deeper connections with others.",
+            file: "resources/inclusion-journal.pdf",
+            categories: ["athome"],
+            tags: [{ label: "@Home", cls: "tag-athome" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "Teen Talks & Activities (UMatter Partnership)",
+            description: "Discussion guides and activities for teens exploring mental health, self-worth, and supporting friends. Created with UMatter.",
+            file: "resources/teen-talks-umatter.pdf",
+            categories: ["teens"],
+            tags: [{ label: "Teens", cls: "tag-teens" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "Shalom Zone Guide for Teens",
+            description: "Help teens create a personal quiet space for managing stress, anxiety, and overwhelming emotions in healthy ways.",
+            file: "resources/shalom-zone-teens.pdf",
+            categories: ["teens"],
+            tags: [{ label: "Teens", cls: "tag-teens" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "Inherent Worth Program (Teens)",
+            description: "A program helping teens recognize the inherent value in every person, building empathy and understanding of disabilities.",
+            file: "resources/inherent-worth-program-teens.pdf",
+            categories: ["teens"],
+            tags: [{ label: "Teens", cls: "tag-teens" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "Mental Health Activity Games (Teens)",
+            description: "Interactive games and activities for teen groups focused on mental health awareness, communication, and mutual support.",
+            file: "resources/mental-health-games-teens.pdf",
+            categories: ["teens"],
+            tags: [{ label: "Teens", cls: "tag-teens" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "Mental Health Guide for Campus Shluchim",
+            description: "A comprehensive playbook for campus Shluchim on supporting student mental health, crisis response, and building awareness.",
+            file: "resources/mental-health-guide-campus.pdf",
+            categories: ["campus"],
+            tags: [{ label: "Campus", cls: "tag-campus" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "Inherent Worth Program (Campus)",
+            description: "Campus-focused program on recognizing inherent worth in every individual, with discussion guides and activities.",
+            file: "resources/inherent-worth-program-campus.pdf",
+            categories: ["campus"],
+            tags: [{ label: "Campus", cls: "tag-campus" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "Mental Health Activity Games (Campus)",
+            description: "Engaging activities for campus communities exploring mental health topics through interactive games and discussion.",
+            file: "resources/mental-health-games-campus.pdf",
+            categories: ["campus"],
+            tags: [{ label: "Campus", cls: "tag-campus" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "Shalom Zone Guide (Young Adults)",
+            description: "A guide for creating calming spaces on campus. Practical tools for young adults to self-regulate during stressful periods.",
+            file: "resources/shalom-zone-young-adult.pdf",
+            categories: ["campus"],
+            tags: [{ label: "Campus", cls: "tag-campus" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "Shalom Zone Guide (Ages 5-12)",
+            description: "Age-appropriate guide for creating a calming quiet space for children dealing with big emotions, anger, or frustration.",
+            file: "resources/shalom-zone-children.pdf",
+            categories: ["children"],
+            tags: [{ label: "Children", cls: "tag-children" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "Mental Health Activity Games (Children)",
+            description: "Fun, age-appropriate games and activities that teach children about emotions, empathy, and supporting one another.",
+            file: "resources/mental-health-games-children.pdf",
+            categories: ["children"],
+            tags: [{ label: "Children", cls: "tag-children" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "PJ Library Mitten String Collaboration",
+            description: "A creative activity inspired by PJ Library's 'The Mitten String,' teaching children about kindness and connection.",
+            file: "resources/pj-library-mitten-string.pdf",
+            categories: ["children"],
+            tags: [{ label: "Children", cls: "tag-children" }, { label: "Activity", cls: "tag-practical" }]
+        },
+        {
+            title: "Inclusive Tu B'Shvat Program",
+            description: "A Tu B'Shvat program designed to be inclusive and accessible for children of all abilities, with sensory-friendly activities.",
+            file: "resources/inclusive-tu-bshvat.pdf",
+            categories: ["children"],
+            tags: [{ label: "Children", cls: "tag-children" }, { label: "Holiday", cls: "tag-holiday" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "Shabbat Inclusive Kids Programs (Ages 3-12)",
+            description: "Ready-to-run Shabbat programs for kids that are designed to be inclusive from the ground up. Activities for ages 3-12.",
+            file: "resources/shabbat-inclusive-kids-programs.pdf",
+            categories: ["children"],
+            tags: [{ label: "Children", cls: "tag-children" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "5 Ways to Create an Inclusive Environment for Kids at Shul",
+            description: "Practical, easy-to-implement tips for making your shul's children's programs welcoming for kids of all abilities.",
+            file: "resources/inclusive-environment-kids-shul.pdf",
+            categories: ["children", "shluchim"],
+            tags: [{ label: "Children", cls: "tag-children" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "The Masks We Wear",
+            description: "A powerful women's program exploring the masks we all wear, vulnerability, and creating space for authentic connection.",
+            file: "resources/masks-we-wear.pdf",
+            categories: ["women"],
+            tags: [{ label: "Women", cls: "tag-women" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+        {
+            title: "Inclusive Challah Bake",
+            description: "A meaningful challah bake program for women's groups that weaves in themes of inclusion and belonging.",
+            file: "resources/inclusive-challah-bake.pdf",
+            categories: ["women"],
+            tags: [{ label: "Women", cls: "tag-women" }, { label: "Activity", cls: "tag-practical" }]
+        },
+        {
+            title: "Community Havdalah Program",
+            description: "An inclusive community Havdalah program bringing people together to close Shabbat with meaningful connection and reflection.",
+            file: "resources/community-havdalah-program.pdf",
+            categories: ["adults"],
+            tags: [{ label: "Adults", cls: "tag-adults" }, { label: "Inclusion", cls: "tag-inclusion" }]
+        },
+        {
+            title: "Guidance for Families in Medical Crisis",
+            description: "Practical advice on supporting community members in medical crisis. Tips for what to say, what to do, and how to help.",
+            file: "resources/families-medical-crisis.pdf",
+            categories: ["adults"],
+            tags: [{ label: "Adults", cls: "tag-adults" }, { label: "Mental Health", cls: "tag-mental-health" }]
+        },
+    ];
+
+    const grid = document.getElementById('resource-grid');
+    const emptyState = document.getElementById('empty-state');
+    const resultCount = document.getElementById('result-count');
+
+    function createTag(label, cls) {
+        const span = document.createElement('span');
+        span.className = 'card-tag ' + cls;
+        span.textContent = label;
+        return span;
+    }
+
+    function createCard(r, index) {
+        const card = document.createElement('div');
+        card.className = 'resource-card' + (r.featured ? ' featured' : '');
+        card.style.animationDelay = (index * 0.04) + 's';
+
+        if (r.featured) {
+            const badge = document.createElement('div');
+            badge.className = 'featured-badge';
+            badge.textContent = 'Complete Guide';
+            card.appendChild(badge);
+        }
+
+        const tagsDiv = document.createElement('div');
+        tagsDiv.className = 'card-tags';
+        r.tags.forEach(function(t) { tagsDiv.appendChild(createTag(t.label, t.cls)); });
+        card.appendChild(tagsDiv);
+
+        const title = document.createElement('div');
+        title.className = 'card-title';
+        title.textContent = r.title;
+        card.appendChild(title);
+
+        const desc = document.createElement('div');
+        desc.className = 'card-description';
+        desc.textContent = r.description;
+        card.appendChild(desc);
+
+        const meta = document.createElement('div');
+        meta.className = 'card-meta';
+
+        const price = document.createElement('span');
+        price.className = 'price-tag';
+        price.textContent = 'Free';
+        meta.appendChild(price);
+
+        const btn = document.createElement('a');
+        btn.href = r.file;
+        btn.download = '';
+        btn.className = 'download-btn';
+        var svgNS = 'http://www.w3.org/2000/svg';
+        var svg = document.createElementNS(svgNS, 'svg');
+        svg.setAttribute('width', '14');
+        svg.setAttribute('height', '14');
+        svg.setAttribute('viewBox', '0 0 24 24');
+        svg.setAttribute('fill', 'none');
+        svg.setAttribute('stroke', 'currentColor');
+        svg.setAttribute('stroke-width', '2');
+        var path = document.createElementNS(svgNS, 'path');
+        path.setAttribute('stroke-linecap', 'round');
+        path.setAttribute('stroke-linejoin', 'round');
+        path.setAttribute('d', 'M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3');
+        svg.appendChild(path);
+        btn.appendChild(svg);
+        var btnText = document.createTextNode(' Download');
+        btn.appendChild(btnText);
+        meta.appendChild(btn);
+
+        card.appendChild(meta);
+        return card;
+    }
+
+    function renderCards(filter) {
+        var filtered = filter === 'all'
+            ? resources
+            : resources.filter(function(r) { return r.categories.indexOf(filter) !== -1; });
+
+        while (grid.firstChild) { grid.removeChild(grid.firstChild); }
+
+        if (filtered.length === 0) {
+            emptyState.classList.add('visible');
+        } else {
+            emptyState.classList.remove('visible');
+        }
+
+        resultCount.textContent = 'Showing ' + filtered.length + ' resource' + (filtered.length !== 1 ? 's' : '');
+
+        filtered.forEach(function(r, i) {
+            grid.appendChild(createCard(r, i));
+        });
+    }
+
+    function updateCounts() {
+        document.getElementById('count-all').textContent = resources.length;
+        var cats = ['shluchim','athome','teens','campus','children','women','adults'];
+        cats.forEach(function(c) {
+            var el = document.getElementById('count-' + c);
+            if (el) el.textContent = resources.filter(function(r) { return r.categories.indexOf(c) !== -1; }).length;
+        });
+    }
+
+    document.getElementById('filters').addEventListener('click', function(e) {
+        var btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        var allBtns = document.querySelectorAll('.filter-btn');
+        for (var i = 0; i < allBtns.length; i++) { allBtns[i].classList.remove('active'); }
+        btn.classList.add('active');
+        renderCards(btn.getAttribute('data-filter'));
+    });
+
+    updateCounts();
+    renderCards('all');
+    </script>
+</body>
+</html>
