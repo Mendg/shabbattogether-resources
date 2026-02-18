@@ -241,13 +241,9 @@
         }
 
         .hero-content {
-            max-width: 1200px;
+            max-width: 800px;
             width: 100%;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 360px;
-            gap: 72px;
-            align-items: center;
             position: relative;
             z-index: 1;
         }
@@ -1187,8 +1183,7 @@
 
         /* ═══ RESPONSIVE ═══ */
         @media (max-width: 1024px) {
-            .hero-content { grid-template-columns: 1fr; gap: 48px; }
-            .hero-panel { max-width: 480px; }
+            .hero-content { max-width: 100%; padding: 0 24px; }
         }
         @media (max-width: 900px) {
             .hero, .what-section, .who-section,
