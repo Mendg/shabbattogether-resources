@@ -241,7 +241,7 @@
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             position: relative;
@@ -1183,7 +1183,7 @@
 
         /* ═══ RESPONSIVE ═══ */
         @media (max-width: 1024px) {
-            .hero-content { max-width: 100%; padding: 0 24px; }
+            .hero-content { padding: 0 24px; }
         }
         @media (max-width: 900px) {
             .hero, .what-section, .who-section,
