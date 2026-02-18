@@ -115,15 +115,29 @@
             box-shadow: 0 1px 0 rgba(54,187,174,0.1);
         }
         .header-logo {
-            font-family: 'Proxima Nova', Arial, sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            color: white;
-            letter-spacing: 0.2px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
             opacity: 0;
             animation: fadeIn 0.6s 0.1s ease forwards;
         }
-        .header-logo span { color: var(--teal); }
+        .header-logo img {
+            height: 28px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+        .header-logo-divider {
+            width: 1px;
+            height: 20px;
+            background: rgba(255,255,255,0.2);
+        }
+        .header-logo-sub {
+            font-family: 'Proxima Nova', Arial, sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 0.3px;
+        }
         .header-bh {
             font-family: 'Proxima Nova', Arial, sans-serif;
             font-size: 13px;
@@ -1004,12 +1018,12 @@
             position: relative;
         }
         .footer-logo {
-            font-family: 'Proxima Nova', Arial, sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 12px;
-            letter-spacing: -0.3px;
+            margin-bottom: 16px;
+        }
+        .footer-logo img {
+            height: 32px;
+            width: auto;
+            filter: brightness(0) invert(1);
         }
         .footer-desc {
             font-size: 14px;
@@ -1143,7 +1157,11 @@
 
     <!-- ════════ HEADER ════════ -->
     <header class="site-header" id="site-header">
-        <div class="header-logo">ShabbaTT<span>Together</span></div>
+        <div class="header-logo">
+            <img src="images/fc-logo-full-color.png" alt="Friendship Circle International">
+            <div class="header-logo-divider"></div>
+            <span class="header-logo-sub">ShabbaTTogether</span>
+        </div>
         <div class="header-bh">ב״ה</div>
         <a href="#resources" class="header-cta">Browse Resources</a>
     </header>
@@ -1156,8 +1174,7 @@
         <div class="hero-content">
             <div class="hero-left">
                 <div class="hero-eyebrow">
-                    <div class="hero-eyebrow-line"></div>
-                    <div class="hero-eyebrow-text">Friendship Circle International</div>
+                    <img src="images/fc-logo-full-color.png" alt="Friendship Circle International" style="height:24px;width:auto;filter:brightness(0) invert(1);opacity:0.7;">
                 </div>
 
                 <div class="hero-badge">Jewish Disability &amp; Inclusion Awareness Month</div>
@@ -1207,7 +1224,7 @@
                 </div>
                 <div class="hero-panel-sep"></div>
                 <div class="hero-panel-org">
-                    <div class="hero-panel-dot">🤝</div>
+                    <div class="hero-panel-dot"><img src="images/fc-logo-full-color.png" alt="FC" style="height:16px;width:auto;filter:brightness(0) invert(1);"></div>
                     <div>
                         <div class="hero-panel-org-name">Friendship Circle International</div>
                         <div class="hero-panel-org-sub">Chabad Inclusion Initiative</div>
@@ -1374,7 +1391,7 @@
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-left">
-                <div class="footer-logo">Friendship Circle International</div>
+                <div class="footer-logo"><img src="images/fc-logo-full-color.png" alt="Friendship Circle International"></div>
                 <p class="footer-desc">ShabbaTTogether is an initiative of <a href="https://www.friendshipcircle.com" target="_blank" rel="noopener">Friendship Circle International</a>, empowering Jewish communities worldwide to become more inclusive and welcoming for individuals of all abilities.</p>
                 <div class="footer-bh">ב״ה</div>
             </div>
