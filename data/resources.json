@@ -3,288 +3,752 @@
     "title": "ShabbaTTogether@Home Complete Guide",
     "description": "The complete guide for bringing inclusion and mental wellness into your home. Resources for before, during, and after Shabbat, with activities for every family member.",
     "file": "resources/shabbattogether-at-home-guide.pdf",
-    "categories": ["athome"],
-    "tags": [{"label": "@Home", "cls": "tag-athome"}, {"label": "Guide", "cls": "tag-practical"}],
+    "categories": [
+      "athome"
+    ],
+    "tags": [
+      {
+        "label": "@Home",
+        "cls": "tag-athome"
+      },
+      {
+        "label": "Guide",
+        "cls": "tag-practical"
+      }
+    ],
     "featured": true
   },
   {
     "title": "Inclusion Sermon 2023",
     "description": "A ready-to-deliver sermon on inclusion and belonging in the Jewish community. Developed in partnership with JLI.",
     "file": "resources/sermon-inclusion-2023.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Sermon", "cls": "tag-sermon"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Sermon",
+        "cls": "tag-sermon"
+      }
+    ]
   },
   {
     "title": "Inclusion Sermon 2021",
     "description": "JLI sermon exploring the Torah perspective on inclusion, disability awareness, and our communal responsibility.",
     "file": "resources/sermon-inclusion-2021.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Sermon", "cls": "tag-sermon"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Sermon",
+        "cls": "tag-sermon"
+      }
+    ]
   },
   {
     "title": "Dvar Torah: Adar, Purim & Inclusion",
     "description": "A Dvar Torah and class connecting the themes of Adar and Purim to inclusion and welcoming every member of the community.",
     "file": "resources/dvar-torah-adar-purim-inclusion.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Sermon", "cls": "tag-sermon"}, {"label": "Holiday", "cls": "tag-holiday"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Sermon",
+        "cls": "tag-sermon"
+      },
+      {
+        "label": "Holiday",
+        "cls": "tag-holiday"
+      }
+    ]
   },
   {
     "title": "Mental Health Guide for Community Shluchim",
     "description": "A comprehensive playbook for community Shluchim on supporting mental health, recognizing warning signs, and connecting people with resources.",
     "file": "resources/mental-health-guide-community.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "The Rebbe's Letters on Inclusion",
     "description": "A curated collection of the Lubavitcher Rebbe's letters addressing inclusion, the potential in every person, and our responsibility to one another.",
     "file": "resources/rebbes-letters-inclusion.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "The Power of Community: Letter of the Rebbe",
     "description": "The Rebbe's powerful message on the strength that comes from communal unity, especially during Hakhel gatherings.",
     "file": "resources/power-of-community-rebbe.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "Food Sensitivities & Printable Labels",
     "description": "Guide to accommodating food sensitivities at community events, with ready-to-print labels for common allergens.",
     "file": "resources/food-sensitivities-labels.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Practical", "cls": "tag-practical"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Practical",
+        "cls": "tag-practical"
+      }
+    ]
   },
   {
     "title": "6 Practical Steps to Be More Inclusive",
     "description": "Actionable steps any shul or community can implement right away to create a more inclusive and welcoming environment.",
     "file": "resources/six-steps-inclusive.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "Tips for Communicating With People with Disabilities",
     "description": "Language guidelines and communication tips for respectfully interacting with and about people with disabilities.",
     "file": "resources/tips-communicating-disabilities.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "Identifying Language Guide",
     "description": "A reference guide on person-first language and how the words we use shape attitudes toward people with disabilities.",
     "file": "resources/identifying-language.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "How to Create a Sensory Box",
     "description": "Step-by-step instructions for building a sensory box to help individuals with sensory needs feel comfortable in your space.",
     "file": "resources/how-to-create-sensory-box.pdf",
-    "categories": ["shluchim", "children"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Practical", "cls": "tag-practical"}]
+    "categories": [
+      "shluchim",
+      "children"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Practical",
+        "cls": "tag-practical"
+      }
+    ]
   },
   {
     "title": "4 Tips to Create a Quiet Space",
     "description": "Practical tips for setting up a calming quiet space at your shul or community center for those who need a sensory break.",
     "file": "resources/tips-create-quiet-space.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Practical", "cls": "tag-practical"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Practical",
+        "cls": "tag-practical"
+      }
+    ]
   },
   {
     "title": "Inclusive Purim Guide",
     "description": "A comprehensive guide from FCI on making your Purim celebrations inclusive and accessible for community members of all abilities.",
     "file": "resources/inclusive-purim-guide.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Holiday", "cls": "tag-holiday"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Holiday",
+        "cls": "tag-holiday"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "Hakhel ShabbaTTogether Message",
     "description": "A special Hakhel message connecting the themes of communal gathering and inclusion for use during the Hakhel year.",
     "file": "resources/hakhel-message.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      }
+    ]
   },
   {
     "title": "Hakhel Message for Print",
     "description": "Print-ready version of the Hakhel ShabbaTTogether message, perfect for distribution in your shul or community center.",
     "file": "resources/hakhel-message-print.pdf",
-    "categories": ["shluchim"],
-    "tags": [{"label": "Shluchim", "cls": "tag-shluchim"}, {"label": "Practical", "cls": "tag-practical"}]
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Practical",
+        "cls": "tag-practical"
+      }
+    ]
   },
   {
     "title": "Mental Health Resources Handout",
     "description": "A one-page handout listing mental health resources, hotlines, and support organizations. Editable for your community.",
     "file": "resources/mental-health-resources-handout.pdf",
-    "categories": ["shluchim", "campus"],
-    "tags": [{"label": "Mental Health", "cls": "tag-mental-health"}, {"label": "Practical", "cls": "tag-practical"}]
+    "categories": [
+      "shluchim",
+      "campus"
+    ],
+    "tags": [
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      },
+      {
+        "label": "Practical",
+        "cls": "tag-practical"
+      }
+    ]
   },
   {
     "title": "@Home Inclusive Challah Bake",
     "description": "A meaningful challah bake activity you can do at home, highlighting how we all belong. Create special challahs and give one to a friend.",
     "file": "resources/at-home-challah-bake.pdf",
-    "categories": ["athome", "women"],
-    "tags": [{"label": "@Home", "cls": "tag-athome"}, {"label": "Activity", "cls": "tag-practical"}]
+    "categories": [
+      "athome",
+      "women"
+    ],
+    "tags": [
+      {
+        "label": "@Home",
+        "cls": "tag-athome"
+      },
+      {
+        "label": "Activity",
+        "cls": "tag-practical"
+      }
+    ]
   },
   {
     "title": "Shalom Zone Guide (All Ages)",
     "description": "Create a quiet, calming space in your home for children, teens, and young adults to self-regulate and manage strong emotions.",
     "file": "resources/shalom-zone-all-ages.pdf",
-    "categories": ["athome"],
-    "tags": [{"label": "@Home", "cls": "tag-athome"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "athome"
+    ],
+    "tags": [
+      {
+        "label": "@Home",
+        "cls": "tag-athome"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "@Home Guidance for Families in Medical Crisis",
     "description": "Practical advice on supporting friends and family in medical crisis, and how to take care of yourself while doing so.",
     "file": "resources/at-home-medical-crisis.pdf",
-    "categories": ["athome", "adults"],
-    "tags": [{"label": "@Home", "cls": "tag-athome"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "athome",
+      "adults"
+    ],
+    "tags": [
+      {
+        "label": "@Home",
+        "cls": "tag-athome"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "@Home Sermon",
     "description": "A personal sermon you can share at your family Shabbat table, weaving inclusion and the weekly Torah portion together.",
     "file": "resources/at-home-sermon.pdf",
-    "categories": ["athome"],
-    "tags": [{"label": "@Home", "cls": "tag-athome"}, {"label": "Sermon", "cls": "tag-sermon"}]
+    "categories": [
+      "athome"
+    ],
+    "tags": [
+      {
+        "label": "@Home",
+        "cls": "tag-athome"
+      },
+      {
+        "label": "Sermon",
+        "cls": "tag-sermon"
+      }
+    ]
   },
   {
     "title": "Family Mental Health Games",
     "description": "Fun activities of introspection and communication using candies, cards, and games. Discover similarities and learn to be supportive.",
     "file": "resources/family-mental-health-games.pdf",
-    "categories": ["athome"],
-    "tags": [{"label": "@Home", "cls": "tag-athome"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "athome"
+    ],
+    "tags": [
+      {
+        "label": "@Home",
+        "cls": "tag-athome"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "Inclusion Journal",
     "description": "An interactive journal for reflecting on inclusion themes, personal growth, and building deeper connections with others.",
     "file": "resources/inclusion-journal.pdf",
-    "categories": ["athome"],
-    "tags": [{"label": "@Home", "cls": "tag-athome"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "athome"
+    ],
+    "tags": [
+      {
+        "label": "@Home",
+        "cls": "tag-athome"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "Teen Talks & Activities (UMatter Partnership)",
     "description": "Discussion guides and activities for teens exploring mental health, self-worth, and supporting friends. Created with UMatter.",
     "file": "resources/teen-talks-umatter.pdf",
-    "categories": ["teens"],
-    "tags": [{"label": "Teens", "cls": "tag-teens"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "teens"
+    ],
+    "tags": [
+      {
+        "label": "Teens",
+        "cls": "tag-teens"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "Shalom Zone Guide for Teens",
     "description": "Help teens create a personal quiet space for managing stress, anxiety, and overwhelming emotions in healthy ways.",
     "file": "resources/shalom-zone-teens.pdf",
-    "categories": ["teens"],
-    "tags": [{"label": "Teens", "cls": "tag-teens"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "teens"
+    ],
+    "tags": [
+      {
+        "label": "Teens",
+        "cls": "tag-teens"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "Inherent Worth Program (Teens)",
     "description": "A program helping teens recognize the inherent value in every person, building empathy and understanding of disabilities.",
     "file": "resources/inherent-worth-program-teens.pdf",
-    "categories": ["teens"],
-    "tags": [{"label": "Teens", "cls": "tag-teens"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "teens"
+    ],
+    "tags": [
+      {
+        "label": "Teens",
+        "cls": "tag-teens"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "Mental Health Activity Games (Teens)",
     "description": "Interactive games and activities for teen groups focused on mental health awareness, communication, and mutual support.",
     "file": "resources/mental-health-games-teens.pdf",
-    "categories": ["teens"],
-    "tags": [{"label": "Teens", "cls": "tag-teens"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "teens"
+    ],
+    "tags": [
+      {
+        "label": "Teens",
+        "cls": "tag-teens"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "Mental Health Guide for Campus Shluchim",
     "description": "A comprehensive playbook for campus Shluchim on supporting student mental health, crisis response, and building awareness.",
     "file": "resources/mental-health-guide-campus.pdf",
-    "categories": ["campus"],
-    "tags": [{"label": "Campus", "cls": "tag-campus"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "campus"
+    ],
+    "tags": [
+      {
+        "label": "Campus",
+        "cls": "tag-campus"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "Inherent Worth Program (Campus)",
     "description": "Campus-focused program on recognizing inherent worth in every individual, with discussion guides and activities.",
     "file": "resources/inherent-worth-program-campus.pdf",
-    "categories": ["campus"],
-    "tags": [{"label": "Campus", "cls": "tag-campus"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "campus"
+    ],
+    "tags": [
+      {
+        "label": "Campus",
+        "cls": "tag-campus"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "Mental Health Activity Games (Campus)",
     "description": "Engaging activities for campus communities exploring mental health topics through interactive games and discussion.",
     "file": "resources/mental-health-games-campus.pdf",
-    "categories": ["campus"],
-    "tags": [{"label": "Campus", "cls": "tag-campus"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "campus"
+    ],
+    "tags": [
+      {
+        "label": "Campus",
+        "cls": "tag-campus"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "Shalom Zone Guide (Young Adults)",
     "description": "A guide for creating calming spaces on campus. Practical tools for young adults to self-regulate during stressful periods.",
     "file": "resources/shalom-zone-young-adult.pdf",
-    "categories": ["campus"],
-    "tags": [{"label": "Campus", "cls": "tag-campus"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "campus"
+    ],
+    "tags": [
+      {
+        "label": "Campus",
+        "cls": "tag-campus"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "Shalom Zone Guide (Ages 5-12)",
     "description": "Age-appropriate guide for creating a calming quiet space for children dealing with big emotions, anger, or frustration.",
     "file": "resources/shalom-zone-children.pdf",
-    "categories": ["children"],
-    "tags": [{"label": "Children", "cls": "tag-children"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "children"
+    ],
+    "tags": [
+      {
+        "label": "Children",
+        "cls": "tag-children"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "Mental Health Activity Games (Children)",
     "description": "Fun, age-appropriate games and activities that teach children about emotions, empathy, and supporting one another.",
     "file": "resources/mental-health-games-children.pdf",
-    "categories": ["children"],
-    "tags": [{"label": "Children", "cls": "tag-children"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "children"
+    ],
+    "tags": [
+      {
+        "label": "Children",
+        "cls": "tag-children"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "PJ Library Mitten String Collaboration",
     "description": "A creative activity inspired by PJ Library's 'The Mitten String,' teaching children about kindness and connection.",
     "file": "resources/pj-library-mitten-string.pdf",
-    "categories": ["children"],
-    "tags": [{"label": "Children", "cls": "tag-children"}, {"label": "Activity", "cls": "tag-practical"}]
+    "categories": [
+      "children"
+    ],
+    "tags": [
+      {
+        "label": "Children",
+        "cls": "tag-children"
+      },
+      {
+        "label": "Activity",
+        "cls": "tag-practical"
+      }
+    ]
   },
   {
     "title": "Inclusive Tu B'Shvat Program",
     "description": "A Tu B'Shvat program designed to be inclusive and accessible for children of all abilities, with sensory-friendly activities.",
     "file": "resources/inclusive-tu-bshvat.pdf",
-    "categories": ["children"],
-    "tags": [{"label": "Children", "cls": "tag-children"}, {"label": "Holiday", "cls": "tag-holiday"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "children"
+    ],
+    "tags": [
+      {
+        "label": "Children",
+        "cls": "tag-children"
+      },
+      {
+        "label": "Holiday",
+        "cls": "tag-holiday"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "Shabbat Inclusive Kids Programs (Ages 3-12)",
     "description": "Ready-to-run Shabbat programs for kids that are designed to be inclusive from the ground up. Activities for ages 3-12.",
     "file": "resources/shabbat-inclusive-kids-programs.pdf",
-    "categories": ["children"],
-    "tags": [{"label": "Children", "cls": "tag-children"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "children"
+    ],
+    "tags": [
+      {
+        "label": "Children",
+        "cls": "tag-children"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "5 Ways to Create an Inclusive Environment for Kids at Shul",
     "description": "Practical, easy-to-implement tips for making your shul's children's programs welcoming for kids of all abilities.",
     "file": "resources/inclusive-environment-kids-shul.pdf",
-    "categories": ["children", "shluchim"],
-    "tags": [{"label": "Children", "cls": "tag-children"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "children",
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Children",
+        "cls": "tag-children"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "The Masks We Wear",
     "description": "A powerful women's program exploring the masks we all wear, vulnerability, and creating space for authentic connection.",
     "file": "resources/masks-we-wear.pdf",
-    "categories": ["women"],
-    "tags": [{"label": "Women", "cls": "tag-women"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "women"
+    ],
+    "tags": [
+      {
+        "label": "Women",
+        "cls": "tag-women"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   },
   {
     "title": "Inclusive Challah Bake",
     "description": "A meaningful challah bake program for women's groups that weaves in themes of inclusion and belonging.",
     "file": "resources/inclusive-challah-bake.pdf",
-    "categories": ["women"],
-    "tags": [{"label": "Women", "cls": "tag-women"}, {"label": "Activity", "cls": "tag-practical"}]
+    "categories": [
+      "women"
+    ],
+    "tags": [
+      {
+        "label": "Women",
+        "cls": "tag-women"
+      },
+      {
+        "label": "Activity",
+        "cls": "tag-practical"
+      }
+    ]
   },
   {
     "title": "Community Havdalah Program",
     "description": "An inclusive community Havdalah program bringing people together to close Shabbat with meaningful connection and reflection.",
     "file": "resources/community-havdalah-program.pdf",
-    "categories": ["adults"],
-    "tags": [{"label": "Adults", "cls": "tag-adults"}, {"label": "Inclusion", "cls": "tag-inclusion"}]
+    "categories": [
+      "adults"
+    ],
+    "tags": [
+      {
+        "label": "Adults",
+        "cls": "tag-adults"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
   },
   {
     "title": "Guidance for Families in Medical Crisis",
     "description": "Practical advice on supporting community members in medical crisis. Tips for what to say, what to do, and how to help.",
     "file": "resources/families-medical-crisis.pdf",
-    "categories": ["adults"],
-    "tags": [{"label": "Adults", "cls": "tag-adults"}, {"label": "Mental Health", "cls": "tag-mental-health"}]
+    "categories": [
+      "adults"
+    ],
+    "tags": [
+      {
+        "label": "Adults",
+        "cls": "tag-adults"
+      },
+      {
+        "label": "Mental Health",
+        "cls": "tag-mental-health"
+      }
+    ]
   }
 ]
