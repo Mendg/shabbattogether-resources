@@ -246,6 +246,13 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            text-align: center;
+        }
+        .hero-content .hero-eyebrow {
+            justify-content: center;
+        }
+        .hero-content .hero-actions {
+            justify-content: center;
         }
 
         .hero-eyebrow {
@@ -303,9 +310,9 @@
         .hero-desc {
             font-size: clamp(16px, 1.8vw, 19px);
             color: rgba(255,255,255,0.72);
-            max-width: 500px;
+            max-width: 600px;
             line-height: 1.7;
-            margin-bottom: 14px;
+            margin: 0 auto 14px;
             font-weight: 300;
             opacity: 0;
             animation: fadeUp 0.8s 0.8s ease forwards;
@@ -314,9 +321,9 @@
         .hero-sub {
             font-size: 14px;
             color: rgba(255,255,255,0.32);
-            max-width: 460px;
+            max-width: 600px;
             line-height: 1.85;
-            margin-bottom: 48px;
+            margin: 0 auto 48px;
             opacity: 0;
             animation: fadeUp 0.8s 0.95s ease forwards;
         }
