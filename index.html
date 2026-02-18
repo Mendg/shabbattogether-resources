@@ -1077,6 +1077,28 @@
             color: rgba(255,255,255,0.35);
         }
         .footer-free strong { color: var(--teal); font-weight: 600; }
+        .footer-orgs {
+            margin-top: 12px;
+        }
+        .footer-org {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .footer-org-logo {
+            flex-shrink: 0;
+        }
+        .footer-org-logo-mi {
+            height: 44px;
+            width: auto;
+            border-radius: 50%;
+        }
+        .footer-org-logo-fc {
+            height: 26px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.65;
+        }
         .footer-bottom {
             max-width: 1120px;
             margin: 48px auto 0;
@@ -1183,7 +1205,7 @@
 
                 <p class="hero-desc">Free, ready-to-use resources to help every shul, school, campus, and home include people of all abilities.</p>
 
-                <p class="hero-sub">ShabbaTTogether was created by the Ruderman Chabad Inclusion Initiative, now led by Friendship Circle International. These guides, sermons, activities, and tools have helped hundreds of communities take meaningful steps toward inclusion.</p>
+                <p class="hero-sub">ShabbaTTogether was created by the Chabad Ruderman Inclusion Initiative, a project of Machne Israel in partnership with the Ruderman Family Foundation. Now led by Friendship Circle International, these guides, sermons, activities, and tools have helped hundreds of communities take meaningful steps toward inclusion.</p>
 
                 <div class="hero-actions">
                     <a href="#resources" class="btn-primary">
@@ -1227,7 +1249,7 @@
                     <div class="hero-panel-dot"><img src="images/fc-logo-full-color.png" alt="FC" style="height:16px;width:auto;filter:brightness(0) invert(1);"></div>
                     <div>
                         <div class="hero-panel-org-name">Friendship Circle International</div>
-                        <div class="hero-panel-org-sub">Chabad Inclusion Initiative</div>
+                        <div class="hero-panel-org-sub">A Machne Israel Initiative</div>
                     </div>
                 </div>
             </div>
@@ -1392,14 +1414,27 @@
         <div class="footer-grid">
             <div class="footer-left">
                 <div class="footer-logo"><img src="images/fc-logo-full-color.png" alt="Friendship Circle International"></div>
-                <p class="footer-desc">ShabbaTTogether is an initiative of <a href="https://www.friendshipcircle.com" target="_blank" rel="noopener">Friendship Circle International</a>, empowering Jewish communities worldwide to become more inclusive and welcoming for individuals of all abilities.</p>
+                <p class="footer-desc">ShabbaTTogether was created by the Chabad Ruderman Inclusion Initiative, a project of Machne Israel, in partnership with the Ruderman Family Foundation. The initiative is now led by <a href="https://www.friendshipcircle.com" target="_blank" rel="noopener">Friendship Circle International</a>, continuing the mission of empowering Jewish communities worldwide to become more inclusive and welcoming for individuals of all abilities.</p>
                 <div class="footer-bh">ב״ה</div>
             </div>
             <div class="footer-right">
-                <div class="footer-label">An Initiative of</div>
-                <div class="footer-initiative">Ruderman Chabad<br>Inclusion Initiative</div>
-                <div class="footer-initiative-sub">Now led by Friendship Circle International</div>
-                <div class="footer-free">
+                <div class="footer-label">Originally Created By</div>
+                <div class="footer-orgs">
+                    <div class="footer-org">
+                        <img src="images/machne-israel-logo.png" alt="Machne Israel" class="footer-org-logo footer-org-logo-mi">
+                        <div>
+                            <div class="footer-initiative">Machne Israel</div>
+                            <div class="footer-initiative-sub">Chabad Ruderman Inclusion Initiative</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-label" style="margin-top:24px;">Now Led By</div>
+                <div class="footer-orgs">
+                    <div class="footer-org">
+                        <img src="images/fc-logo-full-color.png" alt="Friendship Circle International" class="footer-org-logo footer-org-logo-fc">
+                    </div>
+                </div>
+                <div class="footer-free" style="margin-top:24px;">
                     <strong>100% Free</strong> &mdash; No account required
                 </div>
             </div>
