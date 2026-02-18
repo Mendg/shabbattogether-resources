@@ -4,362 +4,756 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShabbaTTogether Inclusion Resources | Friendship Circle International</title>
-    <meta name="description" content="Free inclusion resources for Jewish communities. Sermons, guides, activities, and tools to make your shul, school, and home more welcoming for everyone.">
+    <meta name="description" content="Free inclusion resources for Jewish communities. Sermons, guides, activities, and tools to make your shul, school, campus, and home more welcoming for everyone.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #1b365d;
+            --navy-deep: #0d1f35;
+            --navy-mid: #142848;
             --teal: #36bbae;
-            --teal-light: #e8f8f6;
-            --cream: #f8f5f1;
-            --warm-gray: #6b7280;
-            --light-gray: #f3f4f6;
-            --border: #e5e7eb;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-            --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
-            --radius: 12px;
+            --teal-light: #4fcfc2;
+            --teal-pale: rgba(54,187,174,0.12);
+            --gold: #c9a260;
+            --gold-light: #e0b875;
+            --gold-pale: rgba(201,162,96,0.1);
+            --cream: #faf6f0;
+            --cream-warm: #f5efe6;
+            --warm: #ede6da;
+            --text: #1a1a2e;
+            --text-soft: #5a5468;
+            --text-muted: #9a9095;
+            --border: rgba(27,54,93,0.08);
+            --border-warm: rgba(201,162,96,0.18);
+            --card-bg: #ffffff;
+            --radius: 16px;
+            --radius-lg: 24px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #1a1a1a;
-            background: #fff;
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            color: var(--text);
+            background: var(--cream);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* Hero */
-        .hero {
-            background: var(--navy);
+        /* Grain texture */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.02;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-size: 180px;
+        }
+
+        /* ═══ HEADER ═══ */
+        .site-header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 0 40px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.4s, box-shadow 0.4s;
+        }
+        .site-header.scrolled {
+            background: rgba(13,31,53,0.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 rgba(54,187,174,0.1);
+        }
+        .header-logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
             color: white;
-            padding: 80px 24px 60px;
-            text-align: center;
+            letter-spacing: 0.2px;
+            opacity: 0;
+            animation: fadeIn 0.6s 0.1s ease forwards;
+        }
+        .header-logo span { color: var(--teal); }
+        .header-bh {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 13px;
+            font-style: normal;
+            color: rgba(255,255,255,0.28);
+            opacity: 0;
+            animation: fadeIn 0.6s 0.2s ease forwards;
+        }
+        .header-cta {
+            padding: 9px 22px;
+            background: var(--teal);
+            color: white;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.25s, transform 0.25s;
+            opacity: 0;
+            animation: fadeIn 0.6s 0.3s ease forwards;
+        }
+        .header-cta:hover {
+            background: var(--teal-light);
+            transform: translateY(-1px);
+        }
+
+        /* ═══ HERO ═══ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--navy-deep);
+            color: white;
             position: relative;
             overflow: hidden;
+            padding: 100px 48px 80px;
         }
-        .hero::before {
+
+        /* Subtle dot grid */
+        .hero-pattern {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.04;
+            background-image: radial-gradient(circle, rgba(54,187,174,0.8) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        .hero::after {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -20%;
-            width: 140%;
-            height: 200%;
-            background: radial-gradient(ellipse at 30% 50%, rgba(54,187,174,0.15) 0%, transparent 60%),
-                        radial-gradient(ellipse at 70% 30%, rgba(54,187,174,0.1) 0%, transparent 50%);
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 15% 50%, rgba(54,187,174,0.07) 0%, transparent 65%),
+                radial-gradient(ellipse 50% 70% at 85% 25%, rgba(201,162,96,0.05) 0%, transparent 55%),
+                radial-gradient(ellipse 60% 40% at 60% 95%, rgba(13,31,53,0.6) 0%, transparent 70%);
             pointer-events: none;
         }
-        .hero-inner {
-            max-width: 760px;
+
+        .hero-line {
+            position: absolute;
+            left: 48px;
+            top: 18%;
+            bottom: 18%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(54,187,174,0.25) 30%, rgba(201,162,96,0.15) 70%, transparent);
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 72px;
+            align-items: center;
             position: relative;
             z-index: 1;
         }
-        .hero-org {
-            display: inline-flex;
+
+        .hero-eyebrow {
+            display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            color: rgba(255,255,255,0.5);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            gap: 14px;
             margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.3s ease forwards;
         }
-        .hero-org-dot {
-            width: 4px;
-            height: 4px;
-            background: var(--teal);
-            border-radius: 50%;
+        .hero-eyebrow-line {
+            width: 28px;
+            height: 1px;
+            background: var(--gold);
         }
+        .hero-eyebrow-text {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
         .hero-badge {
             display: inline-block;
-            background: rgba(54,187,174,0.2);
-            color: var(--teal);
-            font-size: 12px;
+            background: rgba(201,162,96,0.1);
+            border: 1px solid rgba(201,162,96,0.22);
+            color: var(--gold);
+            font-size: 11px;
             font-weight: 600;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 6px 16px;
-            border-radius: 20px;
-            margin-bottom: 24px;
+            padding: 7px 18px;
+            border-radius: 4px;
+            margin-bottom: 32px;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.45s ease forwards;
         }
+
         .hero h1 {
-            font-size: clamp(36px, 6vw, 56px);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(38px, 4.8vw, 62px);
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
+            margin-bottom: 28px;
+            letter-spacing: -1.5px;
+            opacity: 0;
+            animation: fadeUp 1s 0.6s ease forwards;
         }
-        .hero h1 span {
+        .hero h1 em {
+            font-style: normal;
             color: var(--teal);
         }
-        .hero-subtitle {
-            font-size: 20px;
-            color: rgba(255,255,255,0.9);
-            max-width: 600px;
-            margin: 0 auto 16px;
-            line-height: 1.6;
-            font-weight: 500;
-        }
-        .hero p {
-            font-size: 16px;
-            color: rgba(255,255,255,0.65);
-            max-width: 540px;
-            margin: 0 auto 32px;
+
+        .hero-desc {
+            font-size: clamp(16px, 1.8vw, 19px);
+            color: rgba(255,255,255,0.72);
+            max-width: 500px;
             line-height: 1.7;
+            margin-bottom: 14px;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.8s ease forwards;
         }
-        .hero-cta {
+
+        .hero-sub {
+            font-size: 14px;
+            color: rgba(255,255,255,0.32);
+            max-width: 460px;
+            line-height: 1.85;
+            margin-bottom: 48px;
+            opacity: 0;
+            animation: fadeUp 0.8s 0.95s ease forwards;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeUp 0.8s 1.1s ease forwards;
+        }
+
+        .btn-primary {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 14px 32px;
+            gap: 10px;
+            padding: 16px 36px;
             background: var(--teal);
             color: white;
-            border: none;
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 16px;
-            font-weight: 700;
-            cursor: pointer;
+            border-radius: 100px;
+            font-size: 15px;
+            font-weight: 600;
             text-decoration: none;
-            transition: all 0.2s;
-            margin-bottom: 40px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.2px;
         }
-        .hero-cta:hover {
-            background: #2fa99d;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(54,187,174,0.4);
+        .btn-primary:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 36px rgba(54,187,174,0.3);
         }
-        .hero-cta svg {
-            width: 18px;
-            height: 18px;
+        .btn-primary svg { transition: transform 0.3s; }
+        .btn-primary:hover svg { transform: translateY(3px); }
+
+        .btn-ghost {
+            font-size: 14px;
+            color: rgba(255,255,255,0.45);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.25s;
+        }
+        .btn-ghost:hover { color: rgba(255,255,255,0.85); }
+
+        /* Hero stats panel */
+        .hero-panel {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            opacity: 0;
+            animation: fadeIn 1s 1.2s ease forwards;
+        }
+        .hero-panel-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.25);
+            margin-bottom: 28px;
         }
         .hero-stats {
             display: flex;
-            justify-content: center;
-            gap: 48px;
-            padding-top: 32px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            flex-direction: column;
+            gap: 28px;
+            margin-bottom: 32px;
         }
         .hero-stat {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 18px;
         }
-        .hero-stat-number {
-            font-size: 32px;
-            font-weight: 800;
+        .hero-stat-num {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+            min-width: 80px;
+        }
+        .hero-stat-num em {
+            font-style: normal;
             color: var(--teal);
         }
         .hero-stat-label {
-            font-size: 13px;
-            color: rgba(255,255,255,0.5);
-            margin-top: 2px;
-        }
-        .bh {
-            position: absolute;
-            top: 16px;
-            right: 24px;
             font-size: 14px;
-            color: rgba(255,255,255,0.5);
-            z-index: 2;
+            font-weight: 500;
+            color: rgba(255,255,255,0.68);
+            line-height: 1.3;
         }
-
-        /* What Is Section */
-        .what-is {
-            background: var(--cream);
-            padding: 64px 24px;
+        .hero-stat-sub {
+            font-size: 11px;
+            color: rgba(255,255,255,0.22);
+            margin-top: 3px;
         }
-        .what-is-inner {
-            max-width: 1000px;
-            margin: 0 auto;
+        .hero-panel-sep {
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+            margin-bottom: 28px;
         }
-        .what-is-header {
-            text-align: center;
-            margin-bottom: 48px;
+        .hero-panel-org {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
-        .what-is-header h2 {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--navy);
-            margin-bottom: 12px;
-        }
-        .what-is-header p {
-            font-size: 16px;
-            color: var(--warm-gray);
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-        .pillars {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-        .pillar {
-            background: white;
-            border-radius: var(--radius);
-            padding: 28px;
-            border: 1px solid var(--border);
-        }
-        .pillar-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
+        .hero-panel-dot {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(54,187,174,0.1);
+            border: 1px solid rgba(54,187,174,0.18);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 16px;
-            font-size: 24px;
+            font-size: 16px;
+            flex-shrink: 0;
         }
-        .pillar-icon-teal { background: var(--teal-light); }
-        .pillar-icon-navy { background: #e8ecf3; }
-        .pillar-icon-warm { background: #fef3c7; }
+        .hero-panel-org-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.3;
+        }
+        .hero-panel-org-sub {
+            font-size: 11px;
+            color: rgba(255,255,255,0.25);
+            margin-top: 2px;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0;
+            animation: fadeIn 1s 2.2s ease forwards;
+        }
+        .hero-scroll span {
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.18);
+        }
+        .scroll-line {
+            width: 1px;
+            height: 48px;
+            background: linear-gradient(to bottom, rgba(54,187,174,0.5), transparent);
+            animation: scrollDrop 2.2s ease-in-out infinite;
+        }
+
+        /* ═══ QUOTE SECTION ═══ */
+        .quote-section {
+            background: var(--navy);
+            padding: 88px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 80% at 10% 50%, rgba(54,187,174,0.05) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 60% at 90% 30%, rgba(201,162,96,0.04) 0%, transparent 50%);
+        }
+        .quote-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        .quote-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .quote-ornament-line {
+            width: 48px;
+            height: 1px;
+            background: rgba(201,162,96,0.3);
+        }
+        .quote-ornament-star { display: none; }
+        .quote-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(20px, 2.4vw, 28px);
+            font-weight: 500;
+            font-style: normal;
+            color: rgba(255,255,255,0.88);
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+        .quote-text em {
+            color: var(--teal);
+            font-style: normal;
+            font-weight: 700;
+        }
+        .quote-attribution {
+            font-size: 12px;
+            color: rgba(255,255,255,0.3);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .quote-attribution strong {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* ═══ PILLARS / WHAT SECTION ═══ */
+        .what-section {
+            padding: 100px 48px;
+            background: var(--cream);
+        }
+        .what-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        .section-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .section-eyebrow-line {
+            width: 28px;
+            height: 1px;
+            background: var(--teal);
+        }
+        .section-eyebrow-text {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--teal);
+        }
+
+        .section-title {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: clamp(26px, 3.2vw, 40px);
+            font-weight: 800;
+            color: var(--navy);
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+        .section-title em {
+            font-style: normal;
+            color: var(--teal);
+        }
+
+        .section-desc {
+            font-size: 16px;
+            color: var(--text-soft);
+            max-width: 500px;
+            line-height: 1.75;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: var(--warm);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+        .pillar {
+            background: var(--cream);
+            padding: 48px 40px;
+            transition: background 0.3s;
+            position: relative;
+        }
+        .pillar:hover { background: white; }
+
+        .pillar-num { display: none; }
+        .pillar-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 13px;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .pillar-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--teal);
+            fill: none;
+        }
+        .pillar-accent {
+            width: 28px;
+            height: 2px;
+            background: var(--teal);
+            border-radius: 2px;
+            margin-bottom: 18px;
+        }
         .pillar h3 {
-            font-size: 17px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 18px;
             font-weight: 700;
             color: var(--navy);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            line-height: 1.3;
+            letter-spacing: -0.2px;
         }
         .pillar p {
             font-size: 14px;
-            color: var(--warm-gray);
-            line-height: 1.65;
+            color: var(--text-soft);
+            line-height: 1.78;
+            font-weight: 300;
         }
 
-        /* Who For Section */
-        .who-for {
-            padding: 64px 24px;
-            background: white;
+        /* ═══ WHO SECTION ═══ */
+        .who-section {
+            padding: 0 48px 100px;
+            background: var(--cream);
         }
-        .who-for-inner {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .who-for h2 {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--navy);
-            margin-bottom: 12px;
-        }
-        .who-for > p, .who-for-inner > p {
-            font-size: 16px;
-            color: var(--warm-gray);
-            margin-bottom: 40px;
-            line-height: 1.7;
-        }
-        .audience-grid {
+        .who-inner { max-width: 1120px; margin: 0 auto; }
+
+        .who-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 16px;
-            text-align: left;
         }
-        .audience-card {
-            padding: 20px;
-            border-radius: 10px;
+        .who-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 36px 30px 32px;
             border: 1px solid var(--border);
-            transition: all 0.2s;
-            cursor: default;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
         }
-        .audience-card:hover {
+        .who-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--teal), var(--gold));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .who-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 56px rgba(27,54,93,0.1), 0 4px 16px rgba(27,54,93,0.05);
+            border-color: transparent;
+        }
+        .who-card:hover::after { opacity: 1; }
+
+        .who-arrow {
+            position: absolute;
+            top: 24px; right: 24px;
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .who-card:hover .who-arrow {
+            background: var(--teal);
             border-color: var(--teal);
-            box-shadow: var(--shadow-sm);
         }
-        .audience-emoji {
-            font-size: 28px;
-            margin-bottom: 10px;
+        .who-arrow svg {
+            width: 12px; height: 12px;
+            stroke: var(--text-muted);
+            fill: none;
+            transition: stroke 0.3s;
         }
-        .audience-card h4 {
-            font-size: 15px;
+        .who-card:hover .who-arrow svg { stroke: white; }
+
+        .who-icon {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(27,54,93,0.05), rgba(54,187,174,0.07));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 18px;
+            transition: transform 0.3s;
+        }
+        .who-card:hover .who-icon { transform: scale(1.08); }
+
+        .who-card h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 16px;
             font-weight: 700;
             color: var(--navy);
-            margin-bottom: 4px;
-        }
-        .audience-card p {
-            font-size: 13px;
-            color: var(--warm-gray);
-            line-height: 1.5;
-        }
-
-        /* Divider */
-        .section-divider {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .section-divider hr {
-            border: none;
-            border-top: 1px solid var(--border);
-        }
-
-        /* Browse header */
-        .browse-header {
-            text-align: center;
-            padding: 48px 24px 0;
-        }
-        .browse-header h2 {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--navy);
             margin-bottom: 8px;
+            letter-spacing: -0.2px;
         }
-        .browse-header p {
-            font-size: 16px;
-            color: var(--warm-gray);
-        }
-
-        @media (max-width: 640px) {
-            .hero { padding: 60px 20px 48px; }
-            .hero-stats { gap: 24px; }
-            .hero-stat-number { font-size: 26px; }
-            .what-is { padding: 48px 20px; }
-            .who-for { padding: 48px 20px; }
-            .audience-grid { grid-template-columns: 1fr 1fr; }
-            .browse-header { padding: 36px 20px 0; }
+        .who-card p {
+            font-size: 13px;
+            color: var(--text-soft);
+            line-height: 1.65;
+            font-weight: 300;
         }
 
-        /* Filter Bar */
+        /* ═══ ORNAMENT DIVIDER ═══ */
+        .ornament-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding: 0 48px;
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+        .ornament-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--warm));
+        }
+        .ornament-line.r {
+            background: linear-gradient(to left, transparent, var(--warm));
+        }
+        .ornament-center {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .ornament-dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            background: var(--teal);
+            opacity: 0.35;
+        }
+        .ornament-diamond {
+            width: 6px; height: 6px;
+            background: var(--gold);
+            opacity: 0.35;
+            transform: rotate(45deg);
+        }
+
+        /* ═══ BROWSE HEADER ═══ */
+        .browse-section {
+            padding: 80px 48px 0;
+            background: var(--cream);
+        }
+        .browse-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 32px;
+        }
+        .browse-right {
+            text-align: right;
+            flex-shrink: 0;
+            padding-bottom: 4px;
+        }
+        .browse-right p {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* ═══ FILTER BAR ═══ */
         .filter-section {
-            background: white;
-            border-bottom: 1px solid var(--border);
-            padding: 16px 24px;
+            padding: 24px 48px 0;
+            background: var(--cream);
             position: sticky;
             top: 0;
             z-index: 100;
+            transition: all 0.3s;
+        }
+        .filter-section.scrolled {
+            background: rgba(250,246,240,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 0 var(--border);
         }
         .filter-inner {
-            max-width: 1100px;
+            max-width: 1120px;
             margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
+            padding-bottom: 20px;
         }
         .filter-inner::-webkit-scrollbar { display: none; }
+
         .filter-btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
+            gap: 7px;
+            padding: 10px 20px;
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 100px;
             background: white;
-            font-family: inherit;
-            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
             font-weight: 500;
-            color: var(--warm-gray);
+            color: var(--text-soft);
             cursor: pointer;
             white-space: nowrap;
-            transition: all 0.2s;
+            transition: all 0.25s;
         }
         .filter-btn:hover {
-            border-color: var(--navy);
+            border-color: rgba(27,54,93,0.22);
             color: var(--navy);
         }
         .filter-btn.active {
@@ -367,276 +761,474 @@
             border-color: var(--navy);
             color: white;
         }
-        .filter-btn .count {
-            background: var(--light-gray);
-            color: var(--warm-gray);
-            font-size: 12px;
-            font-weight: 600;
+        .filter-count {
+            font-size: 10px;
+            font-weight: 700;
             padding: 1px 7px;
-            border-radius: 10px;
+            border-radius: 100px;
+            background: rgba(27,54,93,0.07);
+            color: var(--text-muted);
         }
-        .filter-btn.active .count {
-            background: rgba(255,255,255,0.2);
-            color: white;
+        .filter-btn.active .filter-count {
+            background: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.8);
         }
 
-        /* Content */
+        /* ═══ RESOURCE GRID ═══ */
         .content {
-            max-width: 1100px;
+            max-width: 1120px;
             margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
-        .section-header {
-            margin-bottom: 24px;
+            padding: 28px 48px 100px;
         }
         .result-count {
-            font-size: 14px;
-            color: #9ca3af;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 28px;
         }
-
-        /* Resource Grid */
         .resource-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(336px, 1fr));
             gap: 20px;
         }
 
-        /* Resource Card */
         .resource-card {
-            background: white;
+            background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 24px;
-            transition: all 0.25s ease;
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
             position: relative;
+            overflow: hidden;
             opacity: 0;
-            transform: translateY(10px);
-            animation: fadeUp 0.4s ease forwards;
+            transform: translateY(16px);
+            animation: cardIn 0.5s ease forwards;
+        }
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--teal) 0%, rgba(54,187,174,0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
         .resource-card:hover {
-            border-color: #d1d5db;
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 56px rgba(27,54,93,0.09), 0 4px 16px rgba(27,54,93,0.05);
+            border-color: rgba(54,187,174,0.18);
         }
+        .resource-card:hover::before { opacity: 1; }
+
+        /* Featured card */
+        .resource-card.featured {
+            background: linear-gradient(145deg, rgba(201,162,96,0.04), white 60%);
+            border-color: var(--border-warm);
+        }
+        .resource-card.featured::before {
+            background: linear-gradient(90deg, var(--gold) 0%, var(--teal) 50%, rgba(54,187,174,0) 100%);
+            opacity: 0.8;
+        }
+        .featured-badge {
+            position: absolute;
+            top: 0; right: 28px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: white;
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px 9px;
+            border-radius: 0 0 10px 10px;
+        }
+
         .card-tags {
             display: flex;
             gap: 6px;
             flex-wrap: wrap;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
         .card-tag {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 3px 8px;
+            letter-spacing: 0.7px;
+            padding: 4px 10px;
             border-radius: 4px;
         }
         .tag-shluchim { background: #ede9fe; color: #6d28d9; }
-        .tag-campus { background: #dbeafe; color: #1d4ed8; }
-        .tag-teens { background: #fce7f3; color: #be185d; }
-        .tag-women { background: #fef3c7; color: #b45309; }
+        .tag-campus   { background: #dbeafe; color: #1d4ed8; }
+        .tag-teens    { background: #fce7f3; color: #be185d; }
+        .tag-women    { background: #fef3c7; color: #b45309; }
         .tag-children { background: #d1fae5; color: #047857; }
-        .tag-adults { background: #fee2e2; color: #b91c1c; }
-        .tag-athome { background: var(--teal-light); color: #0f766e; }
-        .tag-sermon { background: #f3e8ff; color: #7c3aed; }
+        .tag-adults   { background: #fee2e2; color: #b91c1c; }
+        .tag-athome   { background: rgba(54,187,174,0.1); color: #0f766e; }
+        .tag-sermon   { background: #f3e8ff; color: #7c3aed; }
         .tag-mental-health { background: #e0f2fe; color: #0369a1; }
         .tag-inclusion { background: #ecfdf5; color: #059669; }
-        .tag-holiday { background: #fff7ed; color: #c2410c; }
+        .tag-holiday  { background: #fff7ed; color: #c2410c; }
         .tag-practical { background: #f1f5f9; color: #475569; }
 
         .card-title {
-            font-size: 17px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 16px;
             font-weight: 700;
             color: var(--navy);
             line-height: 1.35;
-            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+            margin-bottom: 10px;
         }
         .card-description {
-            font-size: 14px;
-            color: var(--warm-gray);
-            line-height: 1.6;
+            font-size: 13.5px;
+            color: var(--text-soft);
+            line-height: 1.72;
             flex: 1;
-            margin-bottom: 16px;
+            margin-bottom: 24px;
+            font-weight: 300;
         }
         .card-meta {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
-            padding-top: 16px;
+            padding-top: 20px;
             border-top: 1px solid var(--border);
+        }
+        .price-tag {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--teal);
+            letter-spacing: 0.3px;
         }
         .download-btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 18px;
+            gap: 8px;
+            padding: 10px 22px;
             background: var(--navy);
             color: white;
             border: none;
-            border-radius: 8px;
-            font-family: inherit;
+            border-radius: 100px;
+            font-family: 'DM Sans', sans-serif;
             font-size: 13px;
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s;
         }
         .download-btn:hover {
-            background: #142a4d;
-            transform: scale(1.02);
-        }
-        .download-btn svg {
-            width: 14px;
-            height: 14px;
-        }
-        .price-tag {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--teal);
-        }
-
-        /* Featured card */
-        .resource-card.featured {
-            border: 2px solid var(--teal);
-            background: linear-gradient(135deg, #f0fdfa 0%, #fff 40%);
-        }
-        .featured-badge {
-            position: absolute;
-            top: -1px;
-            right: 20px;
             background: var(--teal);
-            color: white;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 4px 10px 6px;
-            border-radius: 0 0 6px 6px;
+            transform: scale(1.03);
         }
 
-        /* Empty state */
         .empty-state {
             text-align: center;
-            padding: 60px 20px;
+            padding: 100px 20px;
             display: none;
         }
         .empty-state.visible { display: block; }
         .empty-state h3 {
-            font-size: 18px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
             color: var(--navy);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
-        .empty-state p {
-            color: var(--warm-gray);
-            font-size: 14px;
-        }
+        .empty-state p { color: var(--text-soft); font-size: 15px; }
 
-        /* Footer */
+        /* ═══ FOOTER ═══ */
         .footer {
-            background: var(--navy);
-            color: rgba(255,255,255,0.7);
-            text-align: center;
-            padding: 40px 24px;
+            background: var(--navy-deep);
+            color: rgba(255,255,255,0.45);
+            padding: 80px 48px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        .footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 55% 70% at 15% 50%, rgba(54,187,174,0.04) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 50% at 85% 30%, rgba(201,162,96,0.03) 0%, transparent 50%);
+        }
+        .footer-grid {
+            max-width: 1120px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 64px;
+            align-items: start;
+            position: relative;
         }
         .footer-logo {
-            font-size: 18px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 20px;
             font-weight: 700;
             color: white;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            letter-spacing: -0.3px;
         }
-        .footer p {
+        .footer-desc {
             font-size: 14px;
-            max-width: 480px;
-            margin: 0 auto;
-            line-height: 1.6;
+            line-height: 1.75;
+            max-width: 380px;
+            margin-bottom: 28px;
         }
-        .footer a {
+        .footer-desc a {
             color: var(--teal);
             text-decoration: none;
         }
-        .footer a:hover { text-decoration: underline; }
-
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
+        .footer-desc a:hover { text-decoration: underline; }
+        .footer-bh {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gold);
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+        .footer-right { padding-top: 8px; }
+        .footer-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.2);
+            margin-bottom: 16px;
+        }
+        .footer-initiative {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+        .footer-initiative-sub {
+            font-size: 13px;
+            color: rgba(255,255,255,0.2);
+            margin-bottom: 32px;
+        }
+        .footer-free {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border: 1px solid rgba(54,187,174,0.15);
+            border-radius: 8px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.35);
+        }
+        .footer-free strong { color: var(--teal); font-weight: 600; }
+        .footer-bottom {
+            max-width: 1120px;
+            margin: 48px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .footer-bottom p {
+            font-size: 12px;
+            color: rgba(255,255,255,0.18);
         }
 
-        /* Mobile */
+        /* ═══ ANIMATIONS ═══ */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes cardIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scrollDrop {
+            0%, 100% { opacity: 0.4; transform: scaleY(1); }
+            50%       { opacity: 0.9; transform: scaleY(0.75); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.08s; }
+        .reveal-delay-2 { transition-delay: 0.16s; }
+        .reveal-delay-3 { transition-delay: 0.24s; }
+        .reveal-delay-4 { transition-delay: 0.32s; }
+        .reveal-delay-5 { transition-delay: 0.40s; }
+        .reveal-delay-6 { transition-delay: 0.48s; }
+
+        /* ═══ RESPONSIVE ═══ */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; gap: 48px; }
+            .hero-panel { max-width: 480px; }
+        }
+        @media (max-width: 900px) {
+            .hero, .what-section, .who-section,
+            .browse-section, .filter-section,
+            .quote-section, .footer { padding-left: 24px; padding-right: 24px; }
+            .content { padding-left: 24px; padding-right: 24px; }
+            .pillars { grid-template-columns: 1fr; gap: 2px; }
+            .who-grid { grid-template-columns: 1fr 1fr; }
+            .browse-inner { flex-direction: column; align-items: flex-start; }
+            .browse-right { text-align: left; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+            .ornament-divider { padding: 0 24px; }
+        }
         @media (max-width: 640px) {
-            .hero { padding: 56px 20px 44px; }
-            .hero-org { font-size: 11px; flex-wrap: wrap; justify-content: center; }
-            .hero-stats { gap: 20px; flex-wrap: wrap; }
-            .hero-stat-number { font-size: 24px; }
+            .hero { padding: 88px 20px 64px; min-height: auto; }
+            .hero h1 { font-size: 42px; }
+            .hero-panel { display: none; }
+            .hero-line { display: none; }
+            .who-grid { grid-template-columns: 1fr; }
             .resource-grid { grid-template-columns: 1fr; }
-            .content { padding: 24px 16px 60px; }
-            .filter-section { padding: 12px 16px; }
-            .what-is { padding: 48px 20px; }
-            .who-for { padding: 48px 20px; }
-            .audience-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-            .browse-header { padding: 36px 20px 0; }
-            .pillars { grid-template-columns: 1fr; }
+            .content { padding: 20px 16px 64px; }
+            .site-header { padding: 0 20px; }
+            .footer-bottom { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <div class="bh">B"H</div>
 
-    <!-- Hero -->
+    <!-- ════════ HEADER ════════ -->
+    <header class="site-header" id="site-header">
+        <div class="header-logo">ShabbaTT<span>Together</span></div>
+        <div class="header-bh">ב״ה</div>
+        <a href="#resources" class="header-cta">Browse Resources</a>
+    </header>
+
+    <!-- ════════ HERO ════════ -->
     <section class="hero">
-        <div class="hero-inner">
-            <div class="hero-org">
-                Friendship Circle International
-                <span class="hero-org-dot"></span>
-                Chabad Inclusion Initiative
+        <div class="hero-pattern"></div>
+        <div class="hero-line"></div>
+
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="hero-eyebrow">
+                    <div class="hero-eyebrow-line"></div>
+                    <div class="hero-eyebrow-text">Friendship Circle International</div>
+                </div>
+
+                <div class="hero-badge">Jewish Disability &amp; Inclusion Awareness Month</div>
+
+                <h1>Every community<br>deserves to be<br><em>truly</em> welcoming</h1>
+
+                <p class="hero-desc">Free, ready-to-use resources to help every shul, school, campus, and home include people of all abilities.</p>
+
+                <p class="hero-sub">ShabbaTTogether was created by the Ruderman Chabad Inclusion Initiative, now led by Friendship Circle International. These guides, sermons, activities, and tools have helped hundreds of communities take meaningful steps toward inclusion.</p>
+
+                <div class="hero-actions">
+                    <a href="#resources" class="btn-primary">
+                        Browse All Resources
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3"/></svg>
+                    </a>
+                    <a href="#who" class="btn-ghost">
+                        Who is this for?
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+                    </a>
+                </div>
             </div>
-            <div class="hero-badge">February is Jewish Disability &amp; Inclusion Awareness Month</div>
-            <h1>Make Your Community<br>More <span>Inclusive</span></h1>
-            <p class="hero-subtitle">Free, ready-to-use resources to help every shul, school, campus, and home welcome people of all abilities.</p>
-            <p>ShabbaTTogether was created by the Ruderman Chabad Inclusion Initiative, now led by Friendship Circle International. These guides, sermons, activities, and tools have helped hundreds of communities take practical steps toward inclusion.</p>
-            <a href="#resources" class="hero-cta">
-                Browse All Resources
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" /></svg>
-            </a>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="hero-stat-number">40+</div>
-                    <div class="hero-stat-label">Free Resources</div>
+
+            <div class="hero-panel">
+                <div class="hero-panel-label">At a Glance</div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">40<em>+</em></div>
+                        <div>
+                            <div class="hero-stat-label">Free Resources</div>
+                            <div class="hero-stat-sub">Sermons, guides, activities &amp; tools</div>
+                        </div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">7</div>
+                        <div>
+                            <div class="hero-stat-label">Audience Categories</div>
+                            <div class="hero-stat-sub">Shluchim, families, campus &amp; more</div>
+                        </div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num"><em>$</em>0</div>
+                        <div>
+                            <div class="hero-stat-label">Always Free</div>
+                            <div class="hero-stat-sub">No account required. Download &amp; use.</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number">7</div>
-                    <div class="hero-stat-label">Audience Categories</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number">100%</div>
-                    <div class="hero-stat-label">Free to Download</div>
+                <div class="hero-panel-sep"></div>
+                <div class="hero-panel-org">
+                    <div class="hero-panel-dot">🤝</div>
+                    <div>
+                        <div class="hero-panel-org-name">Friendship Circle International</div>
+                        <div class="hero-panel-org-sub">Chabad Inclusion Initiative</div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
 
-    <!-- What Is This -->
-    <section class="what-is">
-        <div class="what-is-inner">
-            <div class="what-is-header">
-                <h2>What You'll Find Here</h2>
-                <p>Everything you need to bring inclusion into your community, organized by audience and ready to use this Shabbat.</p>
+    <!-- ════════ QUOTE ════════ -->
+    <section class="quote-section">
+        <div class="quote-inner">
+            <div class="quote-ornament">
+                <div class="quote-ornament-line"></div>
+                <div class="quote-ornament-line"></div>
             </div>
+            <p class="quote-text">"Every single person contains <em>an entire world.</em><br>To welcome one person is to welcome an entire world."</p>
+            <p class="quote-attribution">Inspired by <strong>Sanhedrin 4:5</strong> &mdash; The foundation of ShabbaTTogether</p>
+        </div>
+    </section>
+
+    <!-- ════════ WHAT YOU'LL FIND ════════ -->
+    <section class="what-section">
+        <div class="what-inner">
+            <div class="section-eyebrow reveal">
+                <div class="section-eyebrow-line"></div>
+                <div class="section-eyebrow-text">What You'll Find</div>
+            </div>
+            <h2 class="section-title reveal">Resources crafted for<br><em>real community impact</em></h2>
+            <p class="section-desc reveal">Everything you need to bring inclusion into your community, organized by audience and ready to use this Shabbat.</p>
+
             <div class="pillars">
-                <div class="pillar">
-                    <div class="pillar-icon pillar-icon-navy">&#x1f4d6;</div>
+                <div class="pillar reveal reveal-delay-1">
+                    <div class="pillar-num">01</div>
+                    <div class="pillar-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+                    </div>
+                    <div class="pillar-accent"></div>
                     <h3>Sermons &amp; Divrei Torah</h3>
                     <p>Ready-to-deliver sermons connecting Torah wisdom to disability inclusion, mental health awareness, and the value of every person. Perfect for Shabbat, Purim, and year-round.</p>
                 </div>
-                <div class="pillar">
-                    <div class="pillar-icon pillar-icon-teal">&#x1f9e0;</div>
+                <div class="pillar reveal reveal-delay-2">
+                    <div class="pillar-num">02</div>
+                    <div class="pillar-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+                    </div>
+                    <div class="pillar-accent"></div>
                     <h3>Mental Health Guides</h3>
                     <p>Playbooks for Shluchim, campus leaders, and families on supporting mental health. Includes crisis guidance, resource handouts, and the Shalom Zone quiet space program.</p>
                 </div>
-                <div class="pillar">
-                    <div class="pillar-icon pillar-icon-warm">&#x1f3b2;</div>
+                <div class="pillar reveal reveal-delay-3">
+                    <div class="pillar-num">03</div>
+                    <div class="pillar-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+                    </div>
+                    <div class="pillar-accent"></div>
                     <h3>Programs &amp; Activities</h3>
                     <p>Inclusive challah bakes, Havdalah programs, Tu B'Shvat celebrations, mental health games, and more. Designed so every participant feels they belong.</p>
                 </div>
@@ -644,71 +1236,93 @@
         </div>
     </section>
 
-    <!-- Who Is This For -->
-    <section class="who-for">
-        <div class="who-for-inner">
-            <h2>Who Are These Resources For?</h2>
-            <p>Whether you lead a community, run a campus Chabad, teach children, or just want your home to be more welcoming, there's something here for you.</p>
-            <div class="audience-grid">
-                <div class="audience-card">
-                    <div class="audience-emoji">&#x1f54d;</div>
+    <!-- ════════ WHO IS THIS FOR ════════ -->
+    <section class="who-section" id="who">
+        <div class="who-inner">
+            <div class="section-eyebrow reveal">
+                <div class="section-eyebrow-line"></div>
+                <div class="section-eyebrow-text">Who It's For</div>
+            </div>
+            <h2 class="section-title reveal">No matter your role,<br><em>there's something for you</em></h2>
+            <p class="section-desc reveal" style="margin-bottom:40px;">Whether you lead a community, run a campus Chabad, teach children, or simply want your home to be more welcoming.</p>
+
+            <div class="who-grid">
+                <a class="who-card reveal reveal-delay-1" data-category="shluchim" href="#resources">
+                    <div class="who-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg></div>
+                    <div class="who-icon">🕍</div>
                     <h4>Shluchim &amp; Rabbis</h4>
                     <p>Sermons, inclusion handouts, sensory guides, and practical steps for your shul</p>
-                </div>
-                <div class="audience-card">
-                    <div class="audience-emoji">&#x1f3e0;</div>
+                </a>
+                <a class="who-card reveal reveal-delay-2" data-category="athome" href="#resources">
+                    <div class="who-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg></div>
+                    <div class="who-icon">🏠</div>
                     <h4>Families</h4>
                     <p>The complete @Home guide with Shabbat activities for every family member</p>
-                </div>
-                <div class="audience-card">
-                    <div class="audience-emoji">&#x1f393;</div>
+                </a>
+                <a class="who-card reveal reveal-delay-3" data-category="campus" href="#resources">
+                    <div class="who-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg></div>
+                    <div class="who-icon">🎓</div>
                     <h4>Campus Leaders</h4>
                     <p>Mental health playbooks, activities, and Shalom Zone guides for students</p>
-                </div>
-                <div class="audience-card">
-                    <div class="audience-emoji">&#x1f9d2;</div>
+                </a>
+                <a class="who-card reveal reveal-delay-4" data-category="children" href="#resources">
+                    <div class="who-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg></div>
+                    <div class="who-icon">🧒</div>
                     <h4>Youth Educators</h4>
                     <p>Age-appropriate programs, games, and inclusive environments for kids and teens</p>
-                </div>
-                <div class="audience-card">
-                    <div class="audience-emoji">&#x1f46d;</div>
+                </a>
+                <a class="who-card reveal reveal-delay-5" data-category="women" href="#resources">
+                    <div class="who-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg></div>
+                    <div class="who-icon">👩‍👩‍👧</div>
                     <h4>Women's Groups</h4>
-                    <p>The Masks We Wear program and inclusive challah bakes</p>
-                </div>
-                <div class="audience-card">
-                    <div class="audience-emoji">&#x1f91d;</div>
+                    <p>The Masks We Wear program and inclusive challah bakes for Nshei events</p>
+                </a>
+                <a class="who-card reveal reveal-delay-6" data-category="adults" href="#resources">
+                    <div class="who-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" fill="none"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25"/></svg></div>
+                    <div class="who-icon">🤝</div>
                     <h4>Community Members</h4>
                     <p>Havdalah programs, medical crisis support, and inclusion journals</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Browse Resources Header -->
-    <section class="browse-header" id="resources">
-        <h2>Browse &amp; Download Resources</h2>
-        <p>Click any category to filter, or scroll through everything.</p>
+    <!-- ════════ DIVIDER ════════ -->
+    <div style="max-width:1120px;margin:0 auto;padding:0 48px;"><div style="height:1px;background:var(--warm);"></div></div>
+
+    <!-- ════════ BROWSE HEADER ════════ -->
+    <section class="browse-section" id="resources">
+        <div class="browse-inner">
+            <div class="browse-left">
+                <div class="section-eyebrow reveal">
+                    <div class="section-eyebrow-line"></div>
+                    <div class="section-eyebrow-text">Resource Library</div>
+                </div>
+                <h2 class="section-title reveal" style="margin-bottom:0">Browse &amp; Download</h2>
+            </div>
+            <div class="browse-right reveal">
+                <p>Click any category to filter resources</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Filters -->
-    <section class="filter-section">
+    <!-- ════════ FILTERS ════════ -->
+    <section class="filter-section" id="filter-bar">
         <div class="filter-inner" id="filters">
-            <button class="filter-btn active" data-filter="all">All Resources <span class="count" id="count-all"></span></button>
-            <button class="filter-btn" data-filter="shluchim">Shluchim &amp; Rabbis <span class="count" id="count-shluchim"></span></button>
-            <button class="filter-btn" data-filter="athome">@Home / Family <span class="count" id="count-athome"></span></button>
-            <button class="filter-btn" data-filter="teens">Teens <span class="count" id="count-teens"></span></button>
-            <button class="filter-btn" data-filter="campus">Campus <span class="count" id="count-campus"></span></button>
-            <button class="filter-btn" data-filter="children">Children <span class="count" id="count-children"></span></button>
-            <button class="filter-btn" data-filter="women">Women <span class="count" id="count-women"></span></button>
-            <button class="filter-btn" data-filter="adults">Adults <span class="count" id="count-adults"></span></button>
+            <button class="filter-btn active" data-filter="all">All <span class="filter-count" id="count-all"></span></button>
+            <button class="filter-btn" data-filter="shluchim">Shluchim &amp; Rabbis <span class="filter-count" id="count-shluchim"></span></button>
+            <button class="filter-btn" data-filter="athome">@Home / Family <span class="filter-count" id="count-athome"></span></button>
+            <button class="filter-btn" data-filter="teens">Teens <span class="filter-count" id="count-teens"></span></button>
+            <button class="filter-btn" data-filter="campus">Campus <span class="filter-count" id="count-campus"></span></button>
+            <button class="filter-btn" data-filter="children">Children <span class="filter-count" id="count-children"></span></button>
+            <button class="filter-btn" data-filter="women">Women <span class="filter-count" id="count-women"></span></button>
+            <button class="filter-btn" data-filter="adults">Adults <span class="filter-count" id="count-adults"></span></button>
         </div>
     </section>
 
-    <!-- Content -->
+    <!-- ════════ RESOURCE GRID ════════ -->
     <main class="content">
-        <div class="section-header">
-            <div class="result-count" id="result-count"></div>
-        </div>
+        <div class="result-count" id="result-count"></div>
         <div class="resource-grid" id="resource-grid"></div>
         <div class="empty-state" id="empty-state">
             <h3>No resources found</h3>
@@ -716,15 +1330,35 @@
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- ════════ FOOTER ════════ -->
     <footer class="footer">
-        <div class="footer-logo">Friendship Circle International</div>
-        <p>ShabbaTTogether is an initiative of <a href="https://www.friendshipcircle.com" target="_blank" rel="noopener">Friendship Circle International</a>, empowering Jewish communities to become more inclusive and welcoming for individuals with disabilities.</p>
+        <div class="footer-grid">
+            <div class="footer-left">
+                <div class="footer-logo">Friendship Circle International</div>
+                <p class="footer-desc">ShabbaTTogether is an initiative of <a href="https://www.friendshipcircle.com" target="_blank" rel="noopener">Friendship Circle International</a>, empowering Jewish communities worldwide to become more inclusive and welcoming for individuals of all abilities.</p>
+                <div class="footer-bh">ב״ה</div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-label">An Initiative of</div>
+                <div class="footer-initiative">Ruderman Chabad<br>Inclusion Initiative</div>
+                <div class="footer-initiative-sub">Now led by Friendship Circle International</div>
+                <div class="footer-free">
+                    <strong>100% Free</strong> &mdash; No account required
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>All resources are free to download and use for your community.</p>
+            <p>&copy; 2026 Friendship Circle International</p>
+        </div>
     </footer>
 
+    <!-- ═══════════════════════════════════════
+         SCRIPTS
+         ═══════════════════════════════════════ -->
     <script>
     // All resource data is hardcoded - no user input, safe for DOM construction
-    const resources = [
+    var resources = [
         {
             title: "ShabbaTTogether@Home Complete Guide",
             description: "The complete guide for bringing inclusion and mental wellness into your home. Resources for before, during, and after Shabbat, with activities for every family member.",
@@ -1012,75 +1646,73 @@
             file: "resources/families-medical-crisis.pdf",
             categories: ["adults"],
             tags: [{ label: "Adults", cls: "tag-adults" }, { label: "Mental Health", cls: "tag-mental-health" }]
-        },
+        }
     ];
 
-    const grid = document.getElementById('resource-grid');
-    const emptyState = document.getElementById('empty-state');
-    const resultCount = document.getElementById('result-count');
+    var grid        = document.getElementById('resource-grid');
+    var emptyState  = document.getElementById('empty-state');
+    var resultCount = document.getElementById('result-count');
 
     function createTag(label, cls) {
-        const span = document.createElement('span');
+        var span = document.createElement('span');
         span.className = 'card-tag ' + cls;
         span.textContent = label;
         return span;
     }
 
     function createCard(r, index) {
-        const card = document.createElement('div');
+        var card = document.createElement('div');
         card.className = 'resource-card' + (r.featured ? ' featured' : '');
         card.style.animationDelay = (index * 0.04) + 's';
 
         if (r.featured) {
-            const badge = document.createElement('div');
+            var badge = document.createElement('div');
             badge.className = 'featured-badge';
             badge.textContent = 'Complete Guide';
             card.appendChild(badge);
         }
 
-        const tagsDiv = document.createElement('div');
+        var tagsDiv = document.createElement('div');
         tagsDiv.className = 'card-tags';
         r.tags.forEach(function(t) { tagsDiv.appendChild(createTag(t.label, t.cls)); });
         card.appendChild(tagsDiv);
 
-        const title = document.createElement('div');
+        var title = document.createElement('div');
         title.className = 'card-title';
         title.textContent = r.title;
         card.appendChild(title);
 
-        const desc = document.createElement('div');
+        var desc = document.createElement('div');
         desc.className = 'card-description';
         desc.textContent = r.description;
         card.appendChild(desc);
 
-        const meta = document.createElement('div');
+        var meta = document.createElement('div');
         meta.className = 'card-meta';
 
-        const price = document.createElement('span');
+        var price = document.createElement('span');
         price.className = 'price-tag';
         price.textContent = 'Free';
         meta.appendChild(price);
 
-        const btn = document.createElement('a');
+        var btn = document.createElement('a');
         btn.href = r.file;
-        btn.download = '';
+        btn.target = '_blank';
+        btn.rel = 'noopener';
         btn.className = 'download-btn';
+
         var svgNS = 'http://www.w3.org/2000/svg';
         var svg = document.createElementNS(svgNS, 'svg');
-        svg.setAttribute('width', '14');
-        svg.setAttribute('height', '14');
+        svg.setAttribute('width', '14'); svg.setAttribute('height', '14');
         svg.setAttribute('viewBox', '0 0 24 24');
-        svg.setAttribute('fill', 'none');
-        svg.setAttribute('stroke', 'currentColor');
+        svg.setAttribute('fill', 'none'); svg.setAttribute('stroke', 'currentColor');
         svg.setAttribute('stroke-width', '2');
         var path = document.createElementNS(svgNS, 'path');
-        path.setAttribute('stroke-linecap', 'round');
-        path.setAttribute('stroke-linejoin', 'round');
+        path.setAttribute('stroke-linecap', 'round'); path.setAttribute('stroke-linejoin', 'round');
         path.setAttribute('d', 'M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3');
         svg.appendChild(path);
         btn.appendChild(svg);
-        var btnText = document.createTextNode(' Download');
-        btn.appendChild(btnText);
+        btn.appendChild(document.createTextNode(' Download'));
         meta.appendChild(btn);
 
         card.appendChild(meta);
@@ -1101,28 +1733,76 @@
         }
 
         resultCount.textContent = 'Showing ' + filtered.length + ' resource' + (filtered.length !== 1 ? 's' : '');
-
-        filtered.forEach(function(r, i) {
-            grid.appendChild(createCard(r, i));
-        });
+        filtered.forEach(function(r, i) { grid.appendChild(createCard(r, i)); });
     }
 
     function updateCounts() {
         document.getElementById('count-all').textContent = resources.length;
-        var cats = ['shluchim','athome','teens','campus','children','women','adults'];
-        cats.forEach(function(c) {
+        ['shluchim','athome','teens','campus','children','women','adults'].forEach(function(c) {
             var el = document.getElementById('count-' + c);
             if (el) el.textContent = resources.filter(function(r) { return r.categories.indexOf(c) !== -1; }).length;
         });
     }
 
+    // Filter clicks
     document.getElementById('filters').addEventListener('click', function(e) {
         var btn = e.target.closest('.filter-btn');
         if (!btn) return;
-        var allBtns = document.querySelectorAll('.filter-btn');
-        for (var i = 0; i < allBtns.length; i++) { allBtns[i].classList.remove('active'); }
+        document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
         renderCards(btn.getAttribute('data-filter'));
+    });
+
+    // Scroll-triggered reveals
+    var revealObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { revealObs.observe(el); });
+
+    // Sticky header
+    var header = document.getElementById('site-header');
+    window.addEventListener('scroll', function() {
+        header.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Sticky filter bar shadow
+    var filterBar = document.getElementById('filter-bar');
+    var stickyObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            filterBar.classList.toggle('scrolled', !entry.isIntersecting);
+        });
+    }, { threshold: 0 });
+    stickyObs.observe(document.getElementById('resources'));
+
+    // Smooth scroll for CTA + who cards
+    document.querySelectorAll('a[href="#resources"]').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('resources').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+    document.querySelector('a[href="#who"]').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('who').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Who cards -> filter and scroll
+    document.querySelectorAll('.who-card[data-category]').forEach(function(card) {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            var cat = card.getAttribute('data-category');
+            document.querySelectorAll('.filter-btn').forEach(function(b) {
+                b.classList.remove('active');
+                if (b.getAttribute('data-filter') === cat) b.classList.add('active');
+            });
+            renderCards(cat);
+            document.getElementById('resources').scrollIntoView({ behavior: 'smooth' });
+        });
     });
 
     updateCounts();
