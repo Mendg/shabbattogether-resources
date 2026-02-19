@@ -12,9 +12,12 @@
     var resultCount = document.getElementById('result-count');
     var header = document.getElementById('site-header');
     var filterBar = document.getElementById('filter-bar');
+    var searchInput = document.getElementById('search-input');
+    var searchClear = document.getElementById('search-clear');
 
     // State
     var currentFilter = 'all';
+    var searchQuery = '';
     var resources = [];
 
     /**
@@ -90,6 +93,24 @@
             whoLink.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.getElementById('who').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+
+        // Search input
+        if (searchInput) {
+            searchInput.addEventListener('input', function() {
+                searchQuery = this.value.trim().toLowerCase();
+                searchClear.classList.toggle('visible', this.value.length > 0);
+                renderCards(currentFilter);
+            });
+        }
+        if (searchClear) {
+            searchClear.addEventListener('click', function() {
+                searchInput.value = '';
+                searchQuery = '';
+                searchClear.classList.remove('visible');
+                renderCards(currentFilter);
+                searchInput.focus();
             });
         }
 
@@ -229,6 +250,14 @@
         var filtered = filter === 'all'
             ? resources
             : resources.filter(function(r) { return r.categories.indexOf(filter) !== -1; });
+
+        if (searchQuery) {
+            filtered = filtered.filter(function(r) {
+                var haystack = (r.title + ' ' + r.description).toLowerCase();
+                var words = searchQuery.split(/\s+/);
+                return words.every(function(w) { return haystack.indexOf(w) !== -1; });
+            });
+        }
 
         while (grid.firstChild) { grid.removeChild(grid.firstChild); }
 

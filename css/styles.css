@@ -777,6 +777,59 @@
             -webkit-backdrop-filter: blur(20px);
             box-shadow: 0 1px 0 var(--border);
         }
+        .search-bar {
+            max-width: 1120px;
+            margin: 0 auto 12px;
+        }
+        .search-input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 40px 12px 44px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: white;
+            font-family: 'Proxima Nova', Arial, sans-serif;
+            font-size: 15px;
+            color: var(--navy);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .search-input::placeholder {
+            color: var(--text-muted);
+        }
+        .search-input:focus {
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(54,187,174,0.15);
+        }
+        .search-clear {
+            position: absolute;
+            right: 12px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px 8px;
+            line-height: 1;
+            display: none;
+        }
+        .search-clear.visible {
+            display: block;
+        }
+        .search-clear:hover {
+            color: var(--navy);
+        }
+
         .filter-inner {
             max-width: 1120px;
             margin: 0 auto;
