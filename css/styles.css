@@ -1028,6 +1028,32 @@
             background: var(--teal);
             transform: scale(1.03);
         }
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .share-btn:hover {
+            border-color: var(--teal);
+            color: var(--teal);
+        }
+        .share-btn.copied {
+            border-color: var(--teal);
+            background: var(--teal-pale);
+            color: var(--teal);
+        }
+        .resource-card.highlighted {
+            box-shadow: 0 0 0 3px var(--teal), 0 8px 30px rgba(54,187,174,0.2);
+            transition: box-shadow 0.3s;
+        }
 
         .empty-state {
             text-align: center;

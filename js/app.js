@@ -21,6 +21,22 @@
     var resources = [];
 
     /**
+     * Scroll to a resource card if URL has a hash
+     */
+    function scrollToHash() {
+        var hash = window.location.hash.replace('#', '');
+        if (!hash) return;
+        var el = document.getElementById(hash);
+        if (el && el.classList.contains('resource-card')) {
+            setTimeout(function() {
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                el.classList.add('highlighted');
+                setTimeout(function() { el.classList.remove('highlighted'); }, 3000);
+            }, 300);
+        }
+    }
+
+    /**
      * Initialize the application
      */
     function init() {
@@ -42,6 +58,7 @@
                 resources = data;
                 updateCounts();
                 renderCards('all');
+                scrollToHash();
             })
             .catch(function(error) {
                 console.error('Error loading resources:', error);
@@ -179,8 +196,14 @@
     /**
      * Create a resource card element
      */
+    function slugify(file) {
+        return file.replace('resources/', '').replace('.pdf', '');
+    }
+
     function createCard(r, index) {
         var card = document.createElement('div');
+        var slug = slugify(r.file);
+        card.id = slug;
         card.className = 'resource-card' + (r.featured ? ' featured' : '');
         card.style.animationDelay = (index * 0.04) + 's';
 
@@ -238,6 +261,36 @@
         btn.appendChild(svg);
         btn.appendChild(document.createTextNode(' Download'));
         meta.appendChild(btn);
+
+        var shareBtn = document.createElement('button');
+        shareBtn.className = 'share-btn';
+        shareBtn.title = 'Copy link';
+        shareBtn.setAttribute('data-slug', slug);
+        var shareSvg = document.createElementNS(svgNS, 'svg');
+        shareSvg.setAttribute('width', '14');
+        shareSvg.setAttribute('height', '14');
+        shareSvg.setAttribute('viewBox', '0 0 24 24');
+        shareSvg.setAttribute('fill', 'none');
+        shareSvg.setAttribute('stroke', 'currentColor');
+        shareSvg.setAttribute('stroke-width', '2');
+        var sharePath = document.createElementNS(svgNS, 'path');
+        sharePath.setAttribute('stroke-linecap', 'round');
+        sharePath.setAttribute('stroke-linejoin', 'round');
+        sharePath.setAttribute('d', 'M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m9.86-2.54a4.5 4.5 0 00-1.242-7.244l-4.5-4.5a4.5 4.5 0 00-6.364 6.364L4.78 8.591');
+        shareSvg.appendChild(sharePath);
+        shareBtn.appendChild(shareSvg);
+        shareBtn.addEventListener('click', function() {
+            var url = window.location.origin + window.location.pathname + '#' + slug;
+            navigator.clipboard.writeText(url).then(function() {
+                shareBtn.classList.add('copied');
+                shareBtn.title = 'Copied!';
+                setTimeout(function() {
+                    shareBtn.classList.remove('copied');
+                    shareBtn.title = 'Copy link';
+                }, 2000);
+            });
+        });
+        meta.appendChild(shareBtn);
 
         card.appendChild(meta);
         return card;
