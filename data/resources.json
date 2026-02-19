@@ -750,5 +750,115 @@
         "cls": "tag-mental-health"
       }
     ]
+  },
+  {
+    "title": "Practical Ideas for Inclusive Bar and Bat Mitzvahs",
+    "description": "Practical strategies for making Bar and Bat Mitzvah celebrations inclusive and accessible for participants with disabilities. From the Ruderman-Chabad Inclusion Initiative.",
+    "file": "resources/practical-ideas-inclusive-bar-bat-mitzvahs.pdf",
+    "categories": [
+      "shluchim",
+      "children"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
+  },
+  {
+    "title": "High Holiday Jewish Inclusion Guide",
+    "description": "A comprehensive guide for making High Holiday services inclusive and welcoming for people with disabilities. Covers Rosh Hashanah and Yom Kippur accessibility.",
+    "file": "resources/high-holiday-inclusion-guide.pdf",
+    "categories": [
+      "shluchim"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Holiday",
+        "cls": "tag-holiday"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      }
+    ]
+  },
+  {
+    "title": "Inclusion Event Guide",
+    "description": "Step-by-step guide for planning and running inclusive community events. Covers accessibility, accommodations, and creating welcoming environments for all participants.",
+    "file": "resources/inclusion-event-guide.pdf",
+    "categories": [
+      "shluchim",
+      "adults"
+    ],
+    "tags": [
+      {
+        "label": "Shluchim",
+        "cls": "tag-shluchim"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      },
+      {
+        "label": "Practical",
+        "cls": "tag-practical"
+      }
+    ]
+  },
+  {
+    "title": "Camp Training Manual for Counselors and Staff",
+    "description": "Training manual for camp counselors and staff on including campers with disabilities. Covers communication, behavior support, and inclusive programming.",
+    "file": "resources/camp-training-manual-inclusion.pdf",
+    "categories": [
+      "children",
+      "teens"
+    ],
+    "tags": [
+      {
+        "label": "Children",
+        "cls": "tag-children"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      },
+      {
+        "label": "Guide",
+        "cls": "tag-practical"
+      }
+    ]
+  },
+  {
+    "title": "Camp Administration Guide for Inclusion of Campers with Disabilities",
+    "description": "Administrative guide for camp directors on policies, procedures, and best practices for including campers with disabilities in Jewish camp programs.",
+    "file": "resources/camp-admin-guide-inclusion.pdf",
+    "categories": [
+      "children",
+      "teens"
+    ],
+    "tags": [
+      {
+        "label": "Children",
+        "cls": "tag-children"
+      },
+      {
+        "label": "Inclusion",
+        "cls": "tag-inclusion"
+      },
+      {
+        "label": "Guide",
+        "cls": "tag-practical"
+      }
+    ]
   }
 ]
